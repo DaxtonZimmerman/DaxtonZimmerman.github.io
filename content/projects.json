@@ -1,0 +1,46 @@
+[
+  {
+    "id": "triaswear",
+    "name": "TriasWear",
+    "type": "Live collaborative business",
+    "summary": "TriasWear is more than just a clothing brand; it’s a personal connection between us and our audience. It’s something we love doing, and I look forward to working on it every day.",
+    "image": "triaswear.png",
+    "color": "#e5ded6",
+    "stack": ["Shopify", "HTML / CSS", "Analytics", "CapCut"],
+    "live": "https://triaswear.com/",
+    "source": null
+  },
+  {
+    "id": "flow",
+    "name": "Flow",
+    "type": "Personal application",
+    "summary": "Flow helps me see where my money is and how much I can safely spend each paycheck. It’s easy to use, so I can find what I need without searching around.",
+    "image": "flow.png",
+    "color": "#dce9ee",
+    "stack": ["JavaScript", "React", "Supabase", "CSS"],
+    "live": "https://daxtonzimmerman.github.io/flow-budget/demo/index.html",
+    "source": "https://github.com/DaxtonZimmerman/flow-budget"
+  },
+  {
+    "id": "codepath",
+    "name": "Codepath",
+    "type": "Personal application",
+    "summary": "Codepath is easy to use and helps you learn web development through hands-on activities, including building portfolio websites. I love that there’s something for you whether you’re just starting or already have experience.",
+    "image": "codepath.png",
+    "color": "#f1dfcb",
+    "stack": ["React", "TypeScript", "Vite", "IndexedDB"],
+    "live": "https://daxtonzimmerman.github.io/codepath/",
+    "source": "https://github.com/DaxtonZimmerman/codepath"
+  },
+  {
+    "id": "vector",
+    "name": "Vector Climate",
+    "type": "Fictional business concept",
+    "summary": "Vector Climate is a website mockup for a fictional HVAC company that shows my attention to detail. I wanted to keep it simple and easy to use, so visitors can find what they need and contact the business.",
+    "image": "vector.png",
+    "color": "#e0e5cf",
+    "stack": ["HTML", "CSS", "JavaScript", "SVG"],
+    "live": "https://daxtonzimmerman.github.io/vector-climate-hvac/",
+    "source": "https://github.com/DaxtonZimmerman/vector-climate-hvac"
+  }
+]

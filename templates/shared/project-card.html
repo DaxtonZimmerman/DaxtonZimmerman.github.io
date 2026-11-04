@@ -1,0 +1,32 @@
+<article class="project-card {{ID}}-card">
+  <a
+    class="project-visual {{ID}}"
+    style="--project-color:{{COLOR}}"
+    href="work/{{ID}}.html"
+    aria-label="Explore {{NAME}} case study"
+  >
+    <span class="project-kind">{{TYPE}}</span>
+    <div class="browser-frame">
+      <div class="browser-chrome"><i></i><i></i><i></i><span>{{PROJECT_LABEL}}.project</span></div>
+      <img
+        src="assets/{{IMAGE}}"
+        alt="Screenshot of the {{NAME}} website"
+        width="1440"
+        height="900"
+        loading="lazy"
+      />
+    </div>
+    <span class="project-open">View project </span>
+  </a>
+  <div class="project-caption">
+    <div>
+      <p class="meta">{{TYPE}}</p>
+      <h3 class="project-title">
+        <a href="work/{{ID}}.html">{{NAME}} </a>
+      </h3>
+      <p>{{SUMMARY}}</p>
+    </div>
+    <div class="tags">{{TAGS}}</div>
+    {{RESULT}}
+  </div>
+</article>

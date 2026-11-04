@@ -1,0 +1,18 @@
+<dialog id="project-dialog" class="project-dialog music-dialog" aria-labelledby="preview-title">
+  <div class="dialog-inner">
+    <button class="dialog-close" aria-label="Close project preview">×</button>
+    <p class="eyebrow">ON MY DESK</p>
+    <h2 id="preview-title">My <em>projects.</em></h2>
+    <div class="project-preview-layout">
+      <div
+        class="project-tabs"
+        role="tablist"
+        aria-label="Choose a project"
+        aria-orientation="vertical"
+      >
+        {{PROJECT_TABS}}
+      </div>
+      <div class="project-panels">{{PROJECT_PANELS}}</div>
+    </div>
+  </div>
+</dialog>

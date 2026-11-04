@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://daxtonzimmerman.github.io/sitemap.xml

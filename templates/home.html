@@ -1,0 +1,313 @@
+<main id="main" tabindex="-1" class="home-page">
+  <section class="room-hero" aria-labelledby="hero-title">
+    <div class="hero-intro">
+      <p class="availability"><span></span> Websites, part-time roles & internships</p>
+      <h1 id="hero-title">Hey, I’m<br />Daxton<span>.</span></h1>
+      <p class="hero-subtitle">I love making things I can call mine.</p>
+      <div class="short-rule"></div>
+      <p class="hero-personal">Web development student.<br />TriasWear co-founder.</p>
+      <a class="button button-primary" href="work.html">See my work </a>
+      <a class="service-link" href="services.html">Need a website?</a>
+    </div>
+    <div class="room-scene" id="room-scene">
+      <div class="room-layer">
+        <div class="room-art-frame">
+          <picture
+            ><source
+              type="image/webp"
+              srcset="
+                assets/room-768.webp   768w,
+                assets/room-1024.webp 1024w,
+                assets/room-1536.webp 1536w
+              "
+              sizes="(max-width:760px) calc(138.4vw - 66.4px), (max-width:1000px) 124vw, 96vw" />
+            <source media="(max-width:760px)" srcset="assets/room-1024.jpg" />
+            <source srcset="assets/room-1536.jpg" />
+            <img
+              class="room-art"
+              src="assets/daxton-room.png"
+              alt="A pixel-art version of my real room: blue lights, a coding desk, astronaut tapestry, two wall-mounted acoustic guitars, and a keyboard."
+              width="1536"
+              height="1024"
+              fetchpriority="high" /></picture
+          ><svg class="screen-overlay" viewBox="0 0 1536 1024" aria-hidden="true">
+            <defs>
+              <clipPath id="monitor-screen">
+                <path d="M885 313 L943 326 L942 369 L885 353 Z" />
+              </clipPath>
+            </defs>
+            <g clip-path="url(#monitor-screen)">
+              <path d="M880 307H950V375H880Z" fill="#090b14" />
+              <g transform="matrix(1 .22 0 1 884 313)">
+                <svg width="61" height="43" viewBox="250 390 1500 520">
+                  <image href="assets/triaswear-wordmark.png" width="2000" height="1414" />
+                </svg>
+              </g>
+            </g>
+          </svg>
+        </div>
+        <a class="room-hotspot hotspot-about" href="about.html"
+          ><svg aria-hidden="true" viewBox="0 0 24 24">
+            <circle cx="12" cy="7" r="4" />
+            <path d="M4 22v-3a8 8 0 0 1 16 0v3Z" /></svg
+          >About me</a
+        >
+        <a class="room-hotspot hotspot-projects" href="work.html" data-preview-project="all"
+          ><span aria-hidden="true">&lt;/&gt;</span>Projects</a
+        >
+        <button class="room-hotspot hotspot-music" data-open-music>
+          <span aria-hidden="true">♫</span>Music
+        </button>
+        {{ROOM_TARGETS}}
+      </div>
+      <noscript
+        ><p class="room-fallback">
+          Use Work and About to explore. Music and the arcade need JavaScript.
+        </p></noscript
+      >
+      <div class="room-caption">
+        <span id="room-object-hint">Click around my room.</span>
+        <div class="room-shortcuts">
+          <a href="work/triaswear.html">TriasWear</a
+          ><button data-open-music data-music-instrument="guitar">Guitar</button
+          ><button data-open-music data-music-instrument="piano">Piano</button
+          ><button data-open-arcade>Arcade</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="work" class="work-section section-pad" aria-labelledby="work-title">
+    <div class="section-top">
+      <div>
+        <p class="eyebrow">SELECTED WORK</p>
+        <h2 id="work-title">My <em>projects.</em></h2>
+      </div>
+      <a class="text-link" href="work.html">All projects</a>
+    </div>
+    <p class="work-intro">
+      These are projects I’ve worked on and actually use in my day-to-day life.
+    </p>
+    <div class="project-grid">{{PROJECTS}}</div>
+  </section>
+
+  <section id="about" class="about-section section-pad">
+    <div class="about-heading">
+      <p class="eyebrow">ABOUT ME</p>
+      <h2>Hi, I’m<br /><em>Daxton.</em></h2>
+    </div>
+    <div class="about-copy">
+      <p class="about-lead">I love making music, games, websites... just about anything.</p>
+      <p>
+        I play guitar and piano, write songs, and produce my own music. When I’m not making music,
+        I’m usually figuring out something new to build.
+      </p>
+      <div class="about-actions">
+        <a class="text-link" href="about.html">More about me</a
+        ><a
+          class="text-link"
+          href="assets/Daxton-Zimmerman-Resume.pdf"
+          target="_blank"
+          rel="noopener"
+          >My résumé<span class="sr-only"> (PDF, opens a new tab)</span></a
+        >
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="contact-section section-pad">
+    <p class="eyebrow">CONTACT</p>
+    <div class="contact-heading">
+      <h2>Let’s<br /><em>talk.</em></h2>
+    </div>
+    <div class="contact-bottom">
+      <div class="contact-action">
+        <p id="contact-description">Have a website in mind, or a role I could be a good fit for?</p>
+        <a class="button button-primary contact-page-link" href="contact.html">Get in touch</a
+        ><a
+          id="email-link"
+          class="contact-email"
+          href="mailto:daxtonmz0021@gmail.com?subject=Hello%20Daxton"
+          >daxtonmz0021@gmail.com</a
+        ><button id="copy-email" class="copy-email">Copy email address</button
+        ><span id="copy-status" class="sr-only" role="status"></span>
+      </div>
+    </div>
+  </section>
+
+  <dialog id="music-dialog" class="music-dialog" aria-labelledby="music-title">
+    <div class="dialog-inner">
+      <button class="dialog-close" aria-label="Close music corner">×</button>
+      <p class="eyebrow">A MUSIC BREAK</p>
+      <h2 id="music-title">Play a <em>few notes.</em></h2>
+      <div class="instrument-tabs" role="tablist" aria-label="Choose an instrument">
+        <button
+          role="tab"
+          id="guitar-tab"
+          aria-controls="guitar-panel"
+          aria-selected="true"
+          data-instrument="guitar"
+        >
+          Guitar</button
+        ><button
+          role="tab"
+          id="piano-tab"
+          aria-controls="piano-panel"
+          aria-selected="false"
+          tabindex="-1"
+          data-instrument="piano"
+        >
+          Piano
+        </button>
+      </div>
+      <section id="guitar-panel" role="tabpanel" aria-labelledby="guitar-tab">
+        <div class="guitar-strings" role="group" aria-label="Six playable guitar strings">
+          <button class="guitar-string" data-string="0" aria-label="Pluck E2 string">
+            <span>E2</span><i style="--string-width: 3.5px" aria-hidden="true"></i
+            ><kbd>1</kbd></button
+          ><button class="guitar-string" data-string="1" aria-label="Pluck A2 string">
+            <span>A2</span><i style="--string-width: 3.05px" aria-hidden="true"></i
+            ><kbd>2</kbd></button
+          ><button class="guitar-string" data-string="2" aria-label="Pluck D3 string">
+            <span>D3</span><i style="--string-width: 2.6px" aria-hidden="true"></i
+            ><kbd>3</kbd></button
+          ><button class="guitar-string" data-string="3" aria-label="Pluck G3 string">
+            <span>G3</span><i style="--string-width: 2.15px" aria-hidden="true"></i
+            ><kbd>4</kbd></button
+          ><button class="guitar-string" data-string="4" aria-label="Pluck B3 string">
+            <span>B3</span><i style="--string-width: 1.7px" aria-hidden="true"></i
+            ><kbd>5</kbd></button
+          ><button class="guitar-string" data-string="5" aria-label="Pluck E4 string">
+            <span>E4</span><i style="--string-width: 1.25px" aria-hidden="true"></i><kbd>6</kbd>
+          </button>
+        </div>
+        <div class="guitar-actions">
+          <button class="text-link" id="strum-guitar">Strum all six</button
+          ><span>Standard tuning · E A D G B E</span>
+        </div>
+        <p class="piano-hint">Click a string or use keys 1–6. Press S to strum.</p>
+      </section>
+      <section id="piano-panel" role="tabpanel" aria-labelledby="piano-tab" hidden>
+        <div class="piano" role="group" aria-label="Playable one-octave keyboard">
+          <button class="piano-key" data-note="0" aria-label="Play C4">
+            <span>C</span><kbd>A</kbd></button
+          ><button class="piano-key" data-note="1" aria-label="Play D4">
+            <span>D</span><kbd>S</kbd></button
+          ><button class="piano-key" data-note="2" aria-label="Play E4">
+            <span>E</span><kbd>D</kbd></button
+          ><button class="piano-key" data-note="3" aria-label="Play F4">
+            <span>F</span><kbd>F</kbd></button
+          ><button class="piano-key" data-note="4" aria-label="Play G4">
+            <span>G</span><kbd>G</kbd></button
+          ><button class="piano-key" data-note="5" aria-label="Play A4">
+            <span>A</span><kbd>H</kbd></button
+          ><button class="piano-key" data-note="6" aria-label="Play B4">
+            <span>B</span><kbd>J</kbd></button
+          ><button class="piano-key" data-note="7" aria-label="Play C5">
+            <span>C</span><kbd>K</kbd></button
+          ><button
+            class="piano-key piano-black"
+            data-note="8"
+            style="--key-left: calc(12.5% + 9px)"
+            aria-label="Play C sharp4"
+          >
+            <kbd>W</kbd></button
+          ><button
+            class="piano-key piano-black"
+            data-note="9"
+            style="--key-left: calc(25% + 6px)"
+            aria-label="Play D sharp4"
+          >
+            <kbd>E</kbd></button
+          ><button
+            class="piano-key piano-black"
+            data-note="10"
+            style="--key-left: calc(50% + 0px)"
+            aria-label="Play F sharp4"
+          >
+            <kbd>T</kbd></button
+          ><button
+            class="piano-key piano-black"
+            data-note="11"
+            style="--key-left: calc(62.5% + -3px)"
+            aria-label="Play G sharp4"
+          >
+            <kbd>Y</kbd></button
+          ><button
+            class="piano-key piano-black"
+            data-note="12"
+            style="--key-left: calc(75% + -6px)"
+            aria-label="Play A sharp4"
+          >
+            <kbd>U</kbd>
+          </button>
+        </div>
+        <p class="piano-hint">
+          White keys: A S D F G H J K. Sharps: W E T Y U.<br />Keyboard shortcuts work while this
+          window is open.
+        </p>
+      </section>
+      <div class="audio-control">
+        <label for="music-volume">Volume</label
+        ><input id="music-volume" type="range" min="0" max="100" value="25" /><output
+          for="music-volume"
+          id="volume-output"
+          >25%</output
+        >
+      </div>
+      <p class="sound-status" id="sound-status" role="status">Choose a string or a key to play.</p>
+      <p class="music-disclosure">
+        These sounds are generated in your browser, rather than recordings of my playing.
+      </p>
+    </div>
+  </dialog>
+  {{PROJECT_PREVIEW}}
+
+  <dialog id="arcade-dialog" class="music-dialog arcade-dialog" aria-labelledby="arcade-title">
+    <div class="dialog-inner">
+      <button class="dialog-close" aria-label="Close arcade">×</button>
+      <p class="eyebrow">ROOM ARCADE</p>
+      <div class="arcade-title-row">
+        <h2 id="arcade-title">Signal <em>Break.</em></h2>
+        <span class="arcade-badge">18 BRICKS<br />3 LIVES</span>
+      </div>
+      <p class="arcade-intro">Clear the bricks. Keep the ball alive.</p>
+      <div class="arcade-scoreboard" aria-label="Game score">
+        <span>Score <b id="arcade-score">000</b></span
+        ><span>Lives <b id="arcade-lives">3</b></span
+        ><span>Best <b id="arcade-best">000</b></span>
+      </div>
+      <div class="arcade-screen">
+        <canvas
+          id="arcade-canvas"
+          width="480"
+          height="320"
+          tabindex="0"
+          aria-label="Signal Break game board"
+          aria-describedby="arcade-instructions"
+          >Your browser needs canvas support to display this game. The rest of the portfolio works
+          without it.</canvas
+        >
+        <div class="arcade-overlay" id="arcade-overlay" aria-hidden="true">
+          <span>READY?</span><small>Press start to play.</small>
+        </div>
+      </div>
+      <div class="arcade-controls">
+        <button id="arcade-start" class="button button-primary">Start game</button
+        ><button id="arcade-reset" class="text-link">Reset game</button>
+        <div class="arcade-directions" role="group" aria-label="Move the paddle">
+          <button data-paddle="-1" aria-label="Move paddle left">Left</button
+          ><button data-paddle="1" aria-label="Move paddle right">Right</button>
+        </div>
+      </div>
+      <p id="arcade-instructions" class="arcade-instructions">
+        Use the arrow keys or A and D to move. On a phone, drag across the game or hold the arrow
+        buttons. Press Space to pause when the game board is selected.
+      </p>
+      <p id="arcade-status" class="sound-status" role="status">Press Start to play.</p>
+      <p class="music-disclosure">
+        Best score saves on this browser. The game pauses when you leave.
+      </p>
+    </div>
+  </dialog>
+</main>

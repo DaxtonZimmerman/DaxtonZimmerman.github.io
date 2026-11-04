@@ -1,0 +1,64 @@
+{
+  "stage": [400, 70, 1110, 645],
+  "targets": [
+    {
+      "id": "desk",
+      "label": "Coding desk \u2014 explore my projects",
+      "hint": "Desk \u2014 open my projects.",
+      "href": "work.html",
+      "box": [790, 299, 93, 62],
+      "view": [93, 62],
+      "path": "M2 6 L89 1 L92 53 L2 61 Z",
+      "preview": "all"
+    },
+    {
+      "id": "trias",
+      "label": "TriasWear monitor \u2014 read the project story",
+      "hint": "Monitor \u2014 TriasWear.",
+      "href": "work/triaswear.html",
+      "box": [884, 312, 60, 58],
+      "view": [60, 58],
+      "path": "M1 1 L59 14 L58 57 L1 41 Z",
+      "preview": "triaswear"
+    },
+    {
+      "id": "tv",
+      "label": "TV \u2014 play Signal Break",
+      "hint": "TV \u2014 play Signal Break.",
+      "action": "arcade",
+      "box": [997, 297, 137, 110],
+      "view": [137, 110],
+      "path": "M1 1 L136 24 L134 109 L1 85 Z"
+    },
+    {
+      "id": "sunburst",
+      "label": "Sunburst guitar \u2014 play the guitar",
+      "hint": "Sunburst acoustic \u2014 play the strings.",
+      "action": "music",
+      "box": [1281.8338, 223.3582, 70.4183, 183.7479],
+      "view": [64, 167],
+      "path": "M27 36 L27 77 C15 79 11 86 12 99 C13 110 4 120 1 135 C-1 150 4 160 16 164 C24 168 43 168 53 163 C64 157 65 147 62 134 C60 122 51 112 52 100 C54 86 49 79 37 77 L37 36 L43 29 L43 8 Q41 0 32 1 Q23 0 23 9 L23 29 Z",
+      "instrument": "guitar"
+    },
+    {
+      "id": "black",
+      "label": "Black guitar \u2014 play the guitar",
+      "hint": "Black acoustic \u2014 play the strings.",
+      "action": "music",
+      "box": [1353.3524, 225.5587, 71.5186, 188.149],
+      "view": [65, 171],
+      "path": "M24 34 L24 82 C14 84 9 90 10 103 C11 117 3 128 1 141 C-1 154 3 163 14 167 C26 172 49 172 58 166 C66 161 65 150 63 140 C61 126 53 116 54 103 C55 88 49 83 36 82 L36 34 L43 28 L43 9 Q43 0 33 1 Q22 -1 21 9 L21 28 Z",
+      "instrument": "guitar"
+    },
+    {
+      "id": "keyboard",
+      "label": "Piano keyboard \u2014 play a few notes",
+      "hint": "Keyboard \u2014 play some notes.",
+      "action": "music",
+      "box": [1310.4413, 423.6103, 63.8166, 157.341],
+      "view": [58, 143],
+      "path": "M22 1 L51 6 L57 14 L47 133 L42 142 L2 134 L1 127 L17 9 Z",
+      "instrument": "piano"
+    }
+  ]
+}
