@@ -120,7 +120,7 @@ The iframe has an empty `sandbox` attribute: it cannot run scripts or access the
 
 **Explain:** Why should someone else's HTML render inside an isolated iframe instead of being inserted into the portfolio itself?
 
-The TriasWear page's numbered links point to matching detail sections. Its expandable code example comes from the saved Halloween theme's `triaswear-home-hero.liquid`. The internship description in About is based on your account of client conversations, teamwork, and building business websites.
+The TriasWear page's numbered buttons open native dialog popups through `dist/store-details.js`. They keep the page position and URL, support Escape, and return focus to the button when closed. Its expandable code example comes from the saved Halloween theme's `triaswear-home-hero.liquid`. The internship description in About is based on your account of client conversations, teamwork, and building business websites.
 
 ## 12. Room details and the visual theme
 

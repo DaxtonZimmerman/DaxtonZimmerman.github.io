@@ -1386,19 +1386,25 @@ html:not(.enhanced) .trias-gallery figure[hidden] {
   margin-top: 35px;
 }
 
-.connection-map {
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 12px;
-  font-size: 13px;
-  margin-top: 30px;
+.connection-steps {
+  list-style: none;
+  padding: 0;
+  margin: 28px 0 0;
 }
-
-.connection-map > span:nth-child(odd) {
-  padding: 15px;
-  border: 1px solid var(--line);
-  border-radius: 7px;
+.connection-steps li {
+  display: flex;
+  align-items: baseline;
+  gap: 16px;
+  padding: 12px 0;
+  border-top: 1px solid var(--line);
+}
+.connection-steps li > span {
+  font: 12px var(--mono);
+  color: var(--accent);
+}
+.connection-steps strong {
+  font-weight: 500;
+  font-size: 15px;
 }
 
 .lesson-strip {
@@ -1848,36 +1854,59 @@ html:not(.enhanced) .copy-email {
 .detail-intro {
   max-width: 620px;
   line-height: 1.7;
-  margin-top: 24px;
+  margin: 24px 0 32px;
 }
-.detail-list {
-  list-style: none;
-  padding: 0;
-  margin: 36px 0;
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 30px;
-}
-.detail-list li {
-  border-top: 1px solid #9d978d;
-  padding-top: 20px;
-  scroll-margin-top: 100px;
-  display: flex;
-  gap: 15px;
-}
-.detail-list li > span {
-  font: 12px var(--mono);
-  padding-top: 5px;
-}
-.detail-list h3 {
-  font-size: 20px;
-  margin-bottom: 12px;
-}
-.detail-list p,
 .theme-code p {
   font-size: 15px;
   line-height: 1.7;
 }
+.store-dialog {
+  width: min(520px, calc(100% - 32px));
+  max-height: calc(100dvh - 48px);
+  margin: auto;
+  padding: 0;
+  border: 1px solid #6e87af;
+  border-radius: 14px;
+  background: #111b31;
+  color: var(--text);
+  overflow: auto;
+  overscroll-behavior: contain;
+}
+.store-dialog::backdrop {
+  background: #030916c9;
+}
+.store-dialog-body {
+  position: relative;
+  padding: 48px 28px 30px;
+}
+.store-dialog .eyebrow {
+  color: var(--accent);
+  margin-bottom: 20px;
+}
+.store-dialog h2 {
+  font-size: clamp(28px, 5vw, 40px);
+  margin-bottom: 20px;
+}
+.store-dialog p:not(.eyebrow) {
+  font-size: 16px;
+  line-height: 1.7;
+  margin: 0;
+}
+.store-dialog-close {
+  position: absolute;
+  right: 10px;
+  top: 8px;
+  width: 44px;
+  height: 44px;
+  background: transparent;
+  border: 0;
+  color: var(--text);
+  font-size: 28px;
+}
+body.detail-open {
+  overflow: hidden;
+}
+
 .theme-code {
   border-top: 1px solid #9d978d;
   border-bottom: 1px solid #9d978d;
@@ -1926,12 +1955,8 @@ html:not(.enhanced) .copy-email {
   font: 12px var(--mono);
 }
 @media (max-width: 760px) {
-  .detail-list,
   .internship-section {
     grid-template-columns: 1fr;
-  }
-  .detail-list {
-    gap: 22px;
   }
   .store-marker {
     width: 28px;

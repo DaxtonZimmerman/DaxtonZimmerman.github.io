@@ -46,6 +46,7 @@ const versionFiles = [
   'room.js',
   'contact.js',
   'lesson.js',
+  'store-details.js',
   'tabs.js',
   'piano.js',
   'guitar.js',
@@ -201,7 +202,8 @@ const pages = [
     template: project.id,
     base: '../',
     active: 'work',
-    scripts: project.id === 'codepath' ? ['lesson'] : [],
+    scripts:
+      project.id === 'codepath' ? ['lesson'] : project.id === 'triaswear' ? ['store-details'] : [],
     title:
       project.id === 'triaswear'
         ? 'TriasWear — Design & Shopify Development by Daxton Zimmerman'

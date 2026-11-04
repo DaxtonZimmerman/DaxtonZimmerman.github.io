@@ -67,21 +67,36 @@
         fetchpriority="high"
       />
       <div class="store-markers" aria-label="Storefront details">
-        <a
+        <button
           class="store-marker marker-heading"
-          href="#detail-heading"
+          type="button"
+          data-store-detail="detail-heading"
+          aria-haspopup="dialog"
+          disabled
           aria-label="Detail 1: Halloween design"
-          >1</a
         >
-        <a
+          1
+        </button>
+        <button
           class="store-marker marker-products"
-          href="#detail-products"
+          type="button"
+          data-store-detail="detail-products"
+          aria-haspopup="dialog"
+          disabled
           aria-label="Detail 2: Product layout"
-          >2</a
         >
-        <a class="store-marker marker-shop" href="#detail-shop" aria-label="Detail 3: Shopping link"
-          >3</a
+          2
+        </button>
+        <button
+          class="store-marker marker-shop"
+          type="button"
+          data-store-detail="detail-shop"
+          aria-haspopup="dialog"
+          disabled
+          aria-label="Detail 3: Shopping link"
         >
+          3
+        </button>
       </div>
       <figcaption>
         The Halloween storefront I designed and coded. Screenshot from November 3, 2026.
@@ -107,32 +122,49 @@
       I wanted our store to feel like Halloween. I wrote custom code in Shopify to give it a look of
       its own.
     </p>
-    <ol class="detail-list">
-      <li id="detail-heading">
-        <span>01</span>
-        <div>
-          <h3>The Halloween design</h3>
-          <p>
-            The textured background, red lettering, and evidence tape bring the seasonal design into
-            the storefront.
-          </p>
-        </div>
-      </li>
-      <li id="detail-products">
-        <span>02</span>
-        <div>
-          <h3>The clothes stay in view</h3>
-          <p>The hero puts our three products together, with the Halloween details around them.</p>
-        </div>
-      </li>
-      <li id="detail-shop">
-        <span>03</span>
-        <div>
-          <h3>A way into the collection</h3>
-          <p>The “Shop the drop” button takes visitors from the homepage to our products.</p>
-        </div>
-      </li>
-    </ol>
+    <dialog id="detail-heading" class="store-dialog" aria-labelledby="detail-heading-title">
+      <div class="store-dialog-body">
+        <button class="store-dialog-close" type="button" aria-label="Close design detail" autofocus>
+          ×
+        </button>
+        <p class="eyebrow">01 / THE HALLOWEEN DESIGN</p>
+        <h2 id="detail-heading-title">A look of our own.</h2>
+        <p>
+          The textured background, red lettering, and evidence tape bring the seasonal design into
+          the storefront.
+        </p>
+      </div>
+    </dialog>
+    <dialog id="detail-products" class="store-dialog" aria-labelledby="detail-products-title">
+      <div class="store-dialog-body">
+        <button
+          class="store-dialog-close"
+          type="button"
+          aria-label="Close product detail"
+          autofocus
+        >
+          ×
+        </button>
+        <p class="eyebrow">02 / PRODUCT LAYOUT</p>
+        <h2 id="detail-products-title">The clothes stay in view.</h2>
+        <p>The hero puts our three products together, with the Halloween details around them.</p>
+      </div>
+    </dialog>
+    <dialog id="detail-shop" class="store-dialog" aria-labelledby="detail-shop-title">
+      <div class="store-dialog-body">
+        <button
+          class="store-dialog-close"
+          type="button"
+          aria-label="Close shopping detail"
+          autofocus
+        >
+          ×
+        </button>
+        <p class="eyebrow">03 / SHOPPING LINK</p>
+        <h2 id="detail-shop-title">Into the collection.</h2>
+        <p>The “Shop the drop” button takes visitors from the homepage to our products.</p>
+      </div>
+    </dialog>
     <details class="theme-code">
       <summary>See a small piece of the Shopify code <span aria-hidden="true">+</span></summary>
       <p>

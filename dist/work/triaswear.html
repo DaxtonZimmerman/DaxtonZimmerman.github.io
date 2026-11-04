@@ -38,7 +38,7 @@
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:image" content="https://daxtonzimmerman.github.io/assets/triaswear.png" />
     <meta name="twitter:image:alt" content="Screenshot of the TriasWear website" />
-    <link rel="icon" href="../assets/favicon.svg?v=4ef084427b" type="image/svg+xml" />
+    <link rel="icon" href="../assets/favicon.svg?v=2f8c5ba68d" type="image/svg+xml" />
     <link
       rel="preload"
       href="../assets/fonts/dm-sans-latin.woff2"
@@ -46,16 +46,17 @@
       type="font/woff2"
       crossorigin
     />
-    <link rel="stylesheet" href="../room.css?v=4ef084427b" />
-    <link rel="stylesheet" href="../portfolio.css?v=4ef084427b" />
-    <script type="module" src="../site.js?v=4ef084427b"></script>
+    <link rel="stylesheet" href="../room.css?v=2f8c5ba68d" />
+    <link rel="stylesheet" href="../portfolio.css?v=2f8c5ba68d" />
+    <script type="module" src="../site.js?v=2f8c5ba68d"></script>
+    <script type="module" src="../store-details.js?v=2f8c5ba68d"></script>
   </head>
   <body>
     <a class="skip" href="#main">Skip to content</a>
     <header class="site-header">
       <a class="wordmark" href="../index.html" aria-label="Daxton Zimmerman home">
         <img
-          src="../assets/daxton-wordmark.svg?v=4ef084427b"
+          src="../assets/daxton-wordmark.svg?v=2f8c5ba68d"
           alt="daxton."
           width="144"
           height="40"
@@ -155,37 +156,49 @@
             ><source
               type="image/webp"
               srcset="
-                ../assets/triaswear-480.webp?v=4ef084427b   480w,
-                ../assets/triaswear-960.webp?v=4ef084427b   960w,
-                ../assets/triaswear-1536.webp?v=4ef084427b 1536w
+                ../assets/triaswear-480.webp?v=2f8c5ba68d   480w,
+                ../assets/triaswear-960.webp?v=2f8c5ba68d   960w,
+                ../assets/triaswear-1536.webp?v=2f8c5ba68d 1536w
               "
               sizes="100vw" />
             <img
-              src="../assets/triaswear.png?v=4ef084427b"
+              src="../assets/triaswear.png?v=2f8c5ba68d"
               alt="The TriasWear storefront with its seasonal streetwear hero and a link to shop the collection."
               width="1710"
               height="900"
               fetchpriority="high"
           /></picture>
           <div class="store-markers" aria-label="Storefront details">
-            <a
+            <button
               class="store-marker marker-heading"
-              href="#detail-heading"
+              type="button"
+              data-store-detail="detail-heading"
+              aria-haspopup="dialog"
+              disabled
               aria-label="Detail 1: Halloween design"
-              >1</a
             >
-            <a
+              1
+            </button>
+            <button
               class="store-marker marker-products"
-              href="#detail-products"
+              type="button"
+              data-store-detail="detail-products"
+              aria-haspopup="dialog"
+              disabled
               aria-label="Detail 2: Product layout"
-              >2</a
             >
-            <a
+              2
+            </button>
+            <button
               class="store-marker marker-shop"
-              href="#detail-shop"
+              type="button"
+              data-store-detail="detail-shop"
+              aria-haspopup="dialog"
+              disabled
               aria-label="Detail 3: Shopping link"
-              >3</a
             >
+              3
+            </button>
           </div>
           <figcaption>
             The Halloween storefront I designed and coded. Screenshot from November 3, 2026.
@@ -202,13 +215,13 @@
             ><source
               type="image/webp"
               srcset="
-                ../assets/triaswear-product-480.webp?v=4ef084427b   480w,
-                ../assets/triaswear-product-960.webp?v=4ef084427b   960w,
-                ../assets/triaswear-product-1536.webp?v=4ef084427b 1536w
+                ../assets/triaswear-product-480.webp?v=2f8c5ba68d   480w,
+                ../assets/triaswear-product-960.webp?v=2f8c5ba68d   960w,
+                ../assets/triaswear-product-1536.webp?v=2f8c5ba68d 1536w
               "
               sizes="100vw" />
             <img
-              src="../assets/triaswear-product.png?v=4ef084427b"
+              src="../assets/triaswear-product.png?v=2f8c5ba68d"
               alt="TriasWear’s Bold Back Graphic Hoodie page with product photos, sizes, colors, reviews, and purchase controls."
               width="1710"
               height="780"
@@ -226,34 +239,56 @@
           I wanted our store to feel like Halloween. I wrote custom code in Shopify to give it a
           look of its own.
         </p>
-        <ol class="detail-list">
-          <li id="detail-heading">
-            <span>01</span>
-            <div>
-              <h3>The Halloween design</h3>
-              <p>
-                The textured background, red lettering, and evidence tape bring the seasonal design
-                into the storefront.
-              </p>
-            </div>
-          </li>
-          <li id="detail-products">
-            <span>02</span>
-            <div>
-              <h3>The clothes stay in view</h3>
-              <p>
-                The hero puts our three products together, with the Halloween details around them.
-              </p>
-            </div>
-          </li>
-          <li id="detail-shop">
-            <span>03</span>
-            <div>
-              <h3>A way into the collection</h3>
-              <p>The “Shop the drop” button takes visitors from the homepage to our products.</p>
-            </div>
-          </li>
-        </ol>
+        <dialog id="detail-heading" class="store-dialog" aria-labelledby="detail-heading-title">
+          <div class="store-dialog-body">
+            <button
+              class="store-dialog-close"
+              type="button"
+              aria-label="Close design detail"
+              autofocus
+            >
+              ×
+            </button>
+            <p class="eyebrow">01 / THE HALLOWEEN DESIGN</p>
+            <h2 id="detail-heading-title">A look of our own.</h2>
+            <p>
+              The textured background, red lettering, and evidence tape bring the seasonal design
+              into the storefront.
+            </p>
+          </div>
+        </dialog>
+        <dialog id="detail-products" class="store-dialog" aria-labelledby="detail-products-title">
+          <div class="store-dialog-body">
+            <button
+              class="store-dialog-close"
+              type="button"
+              aria-label="Close product detail"
+              autofocus
+            >
+              ×
+            </button>
+            <p class="eyebrow">02 / PRODUCT LAYOUT</p>
+            <h2 id="detail-products-title">The clothes stay in view.</h2>
+            <p>
+              The hero puts our three products together, with the Halloween details around them.
+            </p>
+          </div>
+        </dialog>
+        <dialog id="detail-shop" class="store-dialog" aria-labelledby="detail-shop-title">
+          <div class="store-dialog-body">
+            <button
+              class="store-dialog-close"
+              type="button"
+              aria-label="Close shopping detail"
+              autofocus
+            >
+              ×
+            </button>
+            <p class="eyebrow">03 / SHOPPING LINK</p>
+            <h2 id="detail-shop-title">Into the collection.</h2>
+            <p>The “Shop the drop” button takes visitors from the homepage to our products.</p>
+          </div>
+        </dialog>
         <details class="theme-code">
           <summary>See a small piece of the Shopify code <span aria-hidden="true">+</span></summary>
           <p>
@@ -353,7 +388,7 @@
     <footer class="site-footer">
       <a class="footer-brand" href="../index.html" aria-label="Daxton Zimmerman home">
         <img
-          src="../assets/daxton-wordmark.svg?v=4ef084427b"
+          src="../assets/daxton-wordmark.svg?v=2f8c5ba68d"
           alt="daxton."
           width="124"
           height="35"
