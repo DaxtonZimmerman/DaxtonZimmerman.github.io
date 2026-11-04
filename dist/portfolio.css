@@ -950,28 +950,19 @@ dialog[open]::backdrop {
   }
 
   .project-card.triaswear-card .project-visual {
-    padding: 18px 18px 0;
-    display: block;
+    padding: 16px 16px 0;
   }
 
   .project-card.triaswear-card .project-caption {
-    padding: 22px;
+    padding: 20px 16px;
   }
 
   .project-card.triaswear-card .project-caption .project-title {
-    font-size: 38px;
-  }
-
-  .project-card.triaswear-card .project-caption p:not(.meta) {
-    font-size: 13px;
-  }
-
-  .project-card.triaswear-card .tags span {
-    font-size: 8px;
+    font-size: 30px;
   }
 
   .project-result {
-    font-size: 9px !important;
+    font-size: 11px !important;
   }
 
   .personal-story,

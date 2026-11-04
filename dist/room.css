@@ -1226,18 +1226,14 @@ em {
   }
 
   .project-card {
-    display: grid;
-    grid-template-columns: 0.8fr 1fr;
-    align-items: center;
-    border-radius: 6px;
+    display: block;
+    border-radius: 8px;
   }
 
   .project-visual {
-    padding: 15px 0 15px 15px;
+    padding: 16px 16px 0;
     aspect-ratio: auto;
-    height: 100%;
-    display: flex;
-    align-items: center;
+    height: auto;
   }
 
   .project-kind {
@@ -1265,8 +1261,8 @@ em {
   }
 
   .browser-frame img {
-    aspect-ratio: 1.25;
-    min-height: 100px;
+    aspect-ratio: 1.6;
+    min-height: 0;
   }
 
   .project-open {
@@ -1289,8 +1285,9 @@ em {
   }
 
   .project-caption p:not(.meta) {
+    font-size: 14px;
     line-height: 1.6;
-    margin-bottom: 10px;
+    margin-bottom: 16px;
   }
 
   .tags {
@@ -1299,11 +1296,11 @@ em {
 
   .project-card.vector-card {
     grid-column: auto;
-    grid-template-columns: 0.8fr 1fr;
+    display: block;
   }
 
   .project-card.vector-card .project-visual {
-    padding: 15px 0 15px 15px;
+    padding: 16px 16px 0;
     aspect-ratio: auto;
   }
 
