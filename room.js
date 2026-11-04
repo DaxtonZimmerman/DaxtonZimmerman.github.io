@@ -282,4 +282,5 @@ if (room && layer) {
   motion.addEventListener('change', resetMotion);
 }
 
+findElement('.hotspot-music')?.removeAttribute('disabled');
 document.documentElement.classList.add('enhanced');
