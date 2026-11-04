@@ -32,6 +32,7 @@ The build writes formatted HTML into `dist/`. Edit the templates for page conten
 | Other pages and supporting styles | `dist/portfolio.css` |
 | Shared navigation, email copy, and gallery | `dist/site.js` |
 | Home room dialogs and tabs | `dist/room.js`, `dist/tabs.js` |
+| Original tracks and audio controls | `dist/tracks.js`, `dist/arcade-music.js` |
 | Instruments and arcade | `dist/piano.js`, `dist/guitar.js`, `dist/arcade.js` |
 | Editable Codepath example | `templates/codepath.html`, `dist/lesson.js` |
 | Contact form and email receiver | `dist/contact.js`, `integrations/google-mail/Code.gs` |
@@ -51,6 +52,7 @@ npm test              # Check game, audio, and contact behavior
 npm run format        # Format the source and output
 npm run format:check  # Check formatting
 npm run images        # Rebuild WebP images after changing original images
+npm run deploy        # Check and publish dist/ to GitHub Pages
 ```
 
 ## Contact form
@@ -68,13 +70,16 @@ Use a clearly named test message when checking delivery; repeated tests are rate
 
 The public site is hosted by GitHub Pages at https://daxtonzimmerman.github.io/.
 
-Pushing to `main` runs `.github/workflows/pages.yml`. It installs the tools, builds the pages, checks links and metadata, runs the interaction tests, and publishes `dist/` only after those checks pass.
+Pushing to `main` runs `.github/workflows/pages.yml` to build and check the source. GitHub Pages serves the separate `gh-pages` branch. The deployment command copies only the checked `dist/` files there and requests a Pages build. It uses your existing Git and GitHub CLI sign-in; it does not store a token.
 
 1. Edit the source and format it.
 2. Run `npm run build`, `npm run check`, and `npm test`.
 3. Review changed layouts locally at desktop and phone widths.
 4. Commit and push to `main`.
-5. Check the GitHub Actions result, then open the public site.
+5. Run `npm run deploy`. It builds, checks, tests, and publishes the website files.
+6. Check the Pages build with `gh api repos/DaxtonZimmerman/DaxtonZimmerman.github.io/pages/builds/latest`, then open the public site once its status is `built`.
+
+This branch-based route replaces the artifact deployment that repeatedly timed out on November 4, 2026. Changes to `main` alone do not update the live website.
 
 Canonical page links use `.html` filenames so they work directly on GitHub Pages. The contact form uses the existing Google Apps Script receiver. Physical iPhone/iOS Safari and VoiceOver checks remain separate from browser viewport checks.
 

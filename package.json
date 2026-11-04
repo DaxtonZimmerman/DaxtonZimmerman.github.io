@@ -9,7 +9,8 @@
     "preview": "node server/preview.mjs",
     "format": "prettier --write \"templates/**/*.html\" \"dist/**/*.{html,css,js}\" \"tools/*.mjs\" \"server/*.mjs\" \"content/*.json\" \".vscode/*.json\" \"integrations/**/*.gs\"",
     "format:check": "prettier --check \"templates/**/*.html\" \"dist/**/*.{html,css,js}\" \"tools/*.mjs\" \"server/*.mjs\" \"content/*.json\" \".vscode/*.json\" \"integrations/**/*.gs\"",
-    "images": "node tools/prepare-images.mjs"
+    "images": "node tools/prepare-images.mjs",
+    "deploy": "node tools/publish.mjs"
   },
   "devDependencies": {
     "prettier": "3.7.4",
