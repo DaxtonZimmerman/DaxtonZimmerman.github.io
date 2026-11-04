@@ -1,3 +1,6 @@
+const musicVersion = new URL(import.meta.url).searchParams.get('v') || 'local';
+const { ArcadeMusic } = await import(`./arcade-music.js?v=${musicVersion}`);
+
 // A small, deterministic game model. Rendering and browser controls live below it.
 export const BOARD = { width: 480, height: 320, radius: 5 };
 export function newRound() {
@@ -107,6 +110,27 @@ export function mountArcade(dialog) {
     findElement('.dialog-close').addEventListener('click', () => dialog.close());
     return;
   }
+  const musicStatus = findElement('#arcade-music-status');
+  const music = new ArcadeMusic(findElement('#arcade-audio'), () => {
+    musicStatus.textContent = 'Music couldn’t start. You can keep playing.';
+  });
+  const track = findElement('#arcade-track');
+  const mute = findElement('#arcade-mute');
+  track.addEventListener('change', () => {
+    musicStatus.textContent = '';
+    music.changeTrack(track.value);
+  });
+  mute.addEventListener('click', () => {
+    musicStatus.textContent = '';
+    music.setMuted(!music.muted);
+    mute.setAttribute('aria-pressed', String(music.muted));
+    mute.textContent = music.muted ? 'Unmute music' : 'Mute music';
+  });
+  findElement('#arcade-volume').addEventListener('input', (event) => {
+    const value = Number(event.target.value);
+    music.setVolume(value / 100);
+    findElement('#arcade-volume-output').textContent = value + '%';
+  });
   let game = newRound(),
     opener = null,
     frame = 0,
@@ -138,6 +162,11 @@ export function mountArcade(dialog) {
     const snapshot = [game.phase, game.score, game.lives, best].join(':');
     if (snapshot === lastSnapshot) return;
     lastSnapshot = snapshot;
+    const musicShouldPlay = game.phase === 'running' && dialog.open && !document.hidden;
+    if (musicShouldPlay !== music.playing) {
+      if (musicShouldPlay) musicStatus.textContent = '';
+      music.setPlaying(musicShouldPlay);
+    }
     findElement('#arcade-score').textContent = String(game.score).padStart(3, '0');
     findElement('#arcade-lives').textContent = game.lives;
     if (game.score > best) {
@@ -237,6 +266,7 @@ export function mountArcade(dialog) {
     heldPointers.clear();
   }
   function pause() {
+    music.setPlaying(false);
     if (game.phase === 'running') game.phase = 'paused';
     stopLoop();
     sync();
@@ -284,11 +314,13 @@ export function mountArcade(dialog) {
   findElement('#arcade-reset').addEventListener('click', () => {
     stopLoop();
     game = newRound();
+    music.reset();
     sync();
     draw();
   });
   dialog.addEventListener('keydown', (event) => {
     if (event.altKey || event.metaKey || event.ctrlKey) return;
+    if (event.target.matches('input, select, textarea')) return;
     const key = event.key.toLowerCase();
     if (['arrowleft', 'arrowright', 'a', 'd'].includes(key)) {
       event.preventDefault();

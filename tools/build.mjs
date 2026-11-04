@@ -51,6 +51,7 @@ const versionFiles = [
   'piano.js',
   'guitar.js',
   'arcade.js',
+  'arcade-music.js',
   ...projects.map((project) => `assets/${project.image}`),
   'assets/triaswear-product.png',
   'assets/daxton-portrait.webp',

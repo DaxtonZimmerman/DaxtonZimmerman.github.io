@@ -297,6 +297,26 @@
           ><button data-paddle="1" aria-label="Move paddle right">Right</button>
         </div>
       </div>
+      <div class="arcade-music">
+        <div class="arcade-track">
+          <label for="arcade-track">Soundtrack</label
+          ><select id="arcade-track">
+            <option value="assets/audio/swinging-pants.mp3">Swinging Pants</option>
+            <option value="assets/audio/retro-beat.mp3">Retro Beat</option></select
+          ><button id="arcade-mute" type="button" aria-pressed="false">Mute music</button>
+        </div>
+        <div class="audio-control">
+          <label for="arcade-volume">Music volume</label
+          ><input id="arcade-volume" type="range" min="0" max="100" value="30" /><output
+            id="arcade-volume-output"
+            for="arcade-volume"
+            >30%</output
+          >
+        </div>
+        <p class="arcade-credit">Music by Daxton Zimmerman</p>
+        <p id="arcade-music-status" role="status"></p>
+        <audio id="arcade-audio" src="assets/audio/swinging-pants.mp3" loop preload="none"></audio>
+      </div>
       <p id="arcade-instructions" class="arcade-instructions">
         Use the arrow keys or A and D to move. On a phone, drag across the game or hold the arrow
         buttons. Press Space to pause when the game board is selected.

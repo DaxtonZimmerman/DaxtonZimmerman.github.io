@@ -2275,3 +2275,55 @@ em {
 .room-object {
   z-index: 4;
 }
+
+/* Daxton's game soundtracks */
+.arcade-music {
+  border-top: 1px solid var(--line);
+  margin-top: 22px;
+  padding-top: 18px;
+}
+.arcade-track {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  font-size: 13px;
+}
+.arcade-track select {
+  flex: 1;
+  min-width: 140px;
+  min-height: 44px;
+  padding: 8px 10px;
+  border: 1px solid #68718b;
+  border-radius: 6px;
+  background: #1a223c;
+  color: var(--text);
+  font: inherit;
+}
+.arcade-track button {
+  min-height: 44px;
+  padding: 8px 12px;
+  border: 1px solid #68718b;
+  border-radius: 6px;
+  background: transparent;
+  font-size: 12px;
+}
+.arcade-music .audio-control {
+  font-size: 12px;
+  margin-top: 12px;
+}
+.arcade-music .audio-control label {
+  white-space: nowrap;
+}
+.arcade-credit {
+  font: 11px var(--mono);
+  color: var(--muted);
+  margin: 12px 0 0;
+}
+#arcade-music-status:empty {
+  display: none;
+}
+#arcade-music-status {
+  font-size: 12px;
+  margin-top: 12px;
+}

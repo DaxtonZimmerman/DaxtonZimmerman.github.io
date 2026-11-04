@@ -135,3 +135,9 @@ The mobile menu uses native `details` and `summary`. Its three icon lines animat
 ## 13. Publish through GitHub
 
 This folder is the GitHub working copy. Push changes to `main` to run `.github/workflows/pages.yml`. It builds, checks, tests, and deploys the site. Only `dist/` becomes the public website. The repository also holds the templates and source for employers who want to inspect the code. Page metadata uses .html filenames for GitHub Pages. The older Sites copy is separate and does not automatically receive GitHub edits.
+
+## 14. The arcade soundtrack
+
+Your original OGG files are in `dist/assets/audio/`, alongside MP3 playback copies for broad browser support. The music credit and controls are in `templates/home.html`. `dist/arcade-music.js` controls one audio element and a Web Audio volume gain. It starts only after the visitor starts or resumes a round; pausing, losing focus, closing, losing a life, or ending a round pauses the music. Resume keeps the track position, while Reset returns it to the start. Track selection switches between Swinging Pants and Retro Beat. Music failure never stops the game.
+
+**Try:** Start, pause, resume, mute, change tracks, and close the game. Confirm music never continues after closing. Change the volume using arrow keys while the slider has focus; those keys must change volume instead of moving the game paddle.
