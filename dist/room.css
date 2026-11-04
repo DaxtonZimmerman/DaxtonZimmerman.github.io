@@ -9,6 +9,7 @@
     U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329,
     U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
+
 @font-face {
   font-family: 'DM Mono';
   font-style: normal;
@@ -19,6 +20,7 @@
     U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329,
     U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
+
 @font-face {
   font-family: 'DM Sans';
   font-style: normal;
@@ -34,7 +36,6 @@
 :root {
   color-scheme: dark;
   --bg: #080f20;
-
   --text: #f3f7ff;
   --muted: #b4b5c5;
   --accent: #78b7ff;
@@ -224,7 +225,6 @@ em {
 .wordmark {
   font-size: 25px;
   font-weight: 700;
-
   line-height: 1;
 }
 
@@ -261,7 +261,7 @@ em {
   display: grid;
   grid-template-columns: 0.34fr 1fr;
   align-items: center;
-  padding: 15px var(--gutter) 48px;
+  padding: 15px var(--gutter) 32px;
   min-height: 625px;
   column-gap: 16px;
 }
@@ -276,7 +276,7 @@ em {
 .availability {
   display: inline-flex;
   align-items: center;
-  border: 1px solid #c8bea2;
+  border: 1px solid var(--line);
   border-radius: 30px;
   padding: 5px 13px;
   font-size: 12px;
@@ -352,13 +352,6 @@ em {
   isolation: isolate;
 }
 
-.room-art {
-  width: 100%;
-  height: auto;
-  aspect-ratio: 1.5;
-  object-fit: contain;
-}
-
 .room-hotspot {
   position: absolute;
   display: flex;
@@ -377,6 +370,11 @@ em {
     transform 0.2s,
     background 0.2s;
   z-index: 3;
+  justify-content: center;
+  font-size: clamp(10px, 1.1vw, 16px);
+  padding: 6px 9px;
+  background: #111425;
+  min-height: 7.5%;
 }
 
 .room-hotspot::after {
@@ -410,6 +408,29 @@ em {
   color: var(--accent);
   line-height: 1;
   font-weight: 500;
+}
+
+.hotspot-music:disabled {
+  cursor: wait;
+}
+
+.hotspot-about {
+  left: 7.2%;
+  top: 42%;
+  min-width: 14.2%;
+}
+
+.hotspot-projects {
+  left: 37.7%;
+  top: 27.2%;
+  min-width: 13.8%;
+}
+
+.hotspot-music {
+  left: 78.2%;
+  right: auto;
+  top: 14.7%;
+  min-width: 13%;
 }
 
 /* Project cards */
@@ -688,11 +709,15 @@ em {
   gap: 8vw;
   padding-top: 30px;
   border-top: 1px solid var(--line);
+  grid-template-columns: 1fr;
+  margin-top: 30px;
 }
 
 .contact-action > p {
   font-size: 13px;
   color: #ceccd5;
+  max-width: none;
+  min-height: 0;
 }
 
 .contact-email {
@@ -709,7 +734,7 @@ em {
   padding: 0 0 3px;
   font: 10px var(--mono);
   border: 0;
-  border-bottom: 1px dotted #918a78;
+  border-bottom: 1px dotted var(--line);
   background: transparent;
   color: var(--muted);
 }
@@ -720,6 +745,8 @@ em {
   border-top: 1px solid #30364a;
   display: grid;
   gap: 25px;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
 }
 
 .footer-brand {
@@ -737,14 +764,16 @@ em {
 .site-footer > p {
   color: var(--muted);
   margin: 0;
+  grid-column: 1/-1;
+  text-align: left;
+  font: 10px var(--sans);
 }
-
 /* Dialog base */
 .music-dialog {
   width: min(660px, calc(100vw - 30px));
   max-height: calc(100dvh - 40px);
   padding: 0;
-  border: 1px solid #9a8e75;
+  border: 1px solid var(--line);
   border-radius: 15px;
   color: var(--text);
   background: #10162c;
@@ -796,6 +825,7 @@ em {
   border: 1px solid #454761;
   border-radius: 6px;
   margin: 25px 0 14px;
+  position: relative;
 }
 
 .piano-key {
@@ -816,20 +846,6 @@ em {
   padding: 13px 3px;
   touch-action: none;
   user-select: none;
-}
-
-.piano-key:not(:nth-child(3)):not(:nth-child(7)):not(:last-child)::after {
-  content: '';
-  position: absolute;
-  z-index: 1;
-  top: 0;
-  right: -29%;
-  width: 52%;
-  height: 85px;
-  background: linear-gradient(90deg, #1f2432, #090c16);
-  border-bottom: 4px solid #060911;
-  border-radius: 0 0 4px 4px;
-  pointer-events: none;
 }
 
 .piano-key span {
@@ -909,7 +925,7 @@ em {
 }
 
 .case-type {
-  border: 1px solid #a6997e;
+  border: 1px solid var(--line);
   border-radius: 20px;
   font: 9px var(--mono);
   padding: 8px 12px;
@@ -934,11 +950,6 @@ em {
   justify-content: space-between;
   font: clamp(40px, 6vw, 90px)/1.2 var(--display);
   letter-spacing: -0.04em;
-}
-
-.next-project > span:last-child > span {
-  font-family: var(--sans);
-  color: var(--accent);
 }
 
 .notes-page h1,
@@ -1124,8 +1135,8 @@ em {
     padding: 22px var(--gutter) 52px;
     gap: 0;
     min-height: 0;
+    padding-bottom: 26px;
   }
-
   .hero-intro {
     padding: 0;
     align-self: stretch;
@@ -1133,12 +1144,13 @@ em {
 
   .availability {
     padding: 5px 10px;
+    margin-bottom: 17px;
   }
-
   .hero-intro h1 {
     line-height: 0.98;
+    font-size: 60px;
+    margin-bottom: 12px;
   }
-
   .hero-subtitle {
     font-size: clamp(22px, 4.5vw, 29px);
   }
@@ -1146,13 +1158,13 @@ em {
   .short-rule {
     width: 40px;
     height: 3px;
+    margin: 17px 0 14px;
   }
-
   .hero-personal {
     font-size: 14px;
     line-height: 1.55;
+    margin-bottom: 17px;
   }
-
   .hero-intro .button {
     font-size: 13px;
     padding: 12px 16px;
@@ -1168,21 +1180,17 @@ em {
 
   .room-scene {
     width: calc(100% + 34px);
-    margin: 15px -17px 0;
+    margin: 20px -17px 10px;
   }
-
-  .room-art {
-    width: 100%;
-    height: auto;
-    aspect-ratio: 1.5;
-  }
-
   .room-hotspot {
     border-width: 1px;
     border-radius: 5px;
     gap: 5px;
+    font-size: 10px;
+    padding: 4px 6px;
+    min-height: 44px;
+    min-width: 72px;
   }
-
   .room-hotspot::after {
     height: 7px;
     width: 7px;
@@ -1285,11 +1293,10 @@ em {
   }
 
   .project-caption p:not(.meta) {
-    font-size: 14px;
     line-height: 1.6;
     margin-bottom: 16px;
+    font-size: 12px;
   }
-
   .tags {
     gap: 4px;
   }
@@ -1339,7 +1346,6 @@ em {
 
   .contact-bottom {
     gap: 27px;
-
     padding-top: 25px;
   }
 
@@ -1367,8 +1373,8 @@ em {
   .site-footer > div {
     font-size: 10px;
     justify-content: flex-end;
+    gap: 14px;
   }
-
   .dialog-inner {
     padding: 38px 25px 25px;
   }
@@ -1389,10 +1395,6 @@ em {
   .piano-key {
     min-height: 135px;
     padding: 11px 2px;
-  }
-
-  .piano-key:not(:nth-child(3)):not(:nth-child(7)):not(:last-child)::after {
-    height: 78px;
   }
 
   .piano-key span {
@@ -1592,6 +1594,7 @@ em {
 .room-art-frame {
   position: relative;
   aspect-ratio: 1110/645;
+  overflow: hidden;
 }
 
 .room-art-frame .room-art,
@@ -1606,6 +1609,7 @@ em {
 }
 
 .room-art-frame .room-art {
+  object-fit: contain;
   clip-path: polygon(
     27.8% 16.2%,
     55.9% 6.5%,
@@ -1618,7 +1622,6 @@ em {
     53.5% 69.5%,
     26.1% 60.5%
   );
-  filter: none;
 }
 
 .screen-overlay {
@@ -1626,69 +1629,7 @@ em {
   overflow: visible;
 }
 
-.hotspot-about {
-  min-height: 6%;
-}
-
-.hotspot-projects {
-  min-height: 6%;
-}
-
-.hotspot-music {
-  min-height: 6%;
-}
-
-.room-hotspot {
-  justify-content: center;
-  font-size: clamp(10px, 1.1vw, 16px);
-  padding: 6px 9px;
-}
-
 @media (max-width: 760px) {
-  .room-art-frame {
-    aspect-ratio: 1110/645;
-  }
-
-  .room-scene {
-    margin-bottom: 10px;
-  }
-
-  .room-hotspot {
-    font-size: 10px;
-    padding: 4px 6px;
-  }
-}
-
-.room-hotspot {
-  background: #111425;
-  min-height: 7.5%;
-}
-
-.hotspot-about {
-  left: 7.2%;
-  top: 42%;
-  min-width: 14.2%;
-}
-
-.hotspot-projects {
-  left: 37.7%;
-  top: 27.2%;
-  min-width: 13.8%;
-}
-
-.hotspot-music {
-  left: 78.2%;
-  right: auto;
-  top: 14.7%;
-  min-width: 13%;
-}
-
-@media (max-width: 760px) {
-  .room-hotspot {
-    min-height: 44px;
-    min-width: 72px;
-  }
-
   /* Small monitor links have equivalent full-size Projects and TriasWear controls. */
   .room-object.object-desk,
   .room-object.object-trias {
@@ -1700,24 +1641,11 @@ em {
     top: 42%;
   }
 
-  .hotspot-projects {
-    left: 37.7%;
-    top: 27.2%;
-  }
-
   .hotspot-music {
     left: 78.2%;
     right: auto;
     top: 14.7%;
   }
-}
-
-.piano {
-  position: relative;
-}
-
-.piano-key:not(:nth-child(3)):not(:nth-child(7)):not(:last-child)::after {
-  display: none;
 }
 
 .piano-black {
@@ -1742,7 +1670,7 @@ em {
 }
 
 .piano-black.playing {
-  background: linear-gradient(90deg, #b47531, #5e3a1c);
+  background: linear-gradient(90deg, #35649a, #182b4b);
   transform: translateX(-50%) translateY(2px);
   border-bottom-width: 2px;
 }
@@ -1758,10 +1686,6 @@ em {
   }
 }
 
-.room-art-frame {
-  overflow: hidden;
-}
-
 /* Interactive room layer */
 .room-layer {
   position: relative;
@@ -1774,17 +1698,16 @@ em {
   display: block;
   background: transparent;
   padding: 0;
-  transition:
-    background 0.18s,
-    box-shadow 0.18s,
-    border-color 0.18s;
   cursor: pointer;
-}
-
-.room-object:hover,
-.room-object:focus-visible {
-  border-color: #a8d0ff;
-  outline-offset: 4px;
+  transform: none;
+  min-width: 0;
+  min-height: 0;
+  clip-path: none;
+  border: 0;
+  border-radius: 0;
+  pointer-events: none;
+  outline: none;
+  z-index: 4;
 }
 
 .room-caption {
@@ -1800,6 +1723,8 @@ em {
   padding-top: 12px;
   color: var(--muted);
   font: 10px/1.5 var(--mono);
+  font-family: var(--sans);
+  font-size: 12px;
 }
 
 .room-shortcuts {
@@ -1815,6 +1740,8 @@ em {
   color: #bed1ed;
   font: 10px var(--mono);
   white-space: nowrap;
+  font-family: var(--sans);
+  font-size: 12px;
 }
 
 .room-shortcuts a:hover,
@@ -2004,14 +1931,16 @@ em {
     bottom: 0;
     display: block;
     padding-top: 12px;
+    font-size: 11px;
+    min-height: 67px;
   }
-
   .room-shortcuts a,
   .room-shortcuts button {
     display: inline-flex;
     align-items: center;
+    min-height: 44px;
+    font-size: 12px;
   }
-
   .arcade-dialog .dialog-inner {
     padding: 36px 20px 22px;
   }
@@ -2089,68 +2018,13 @@ em {
   }
 }
 
-.contact-bottom {
-  grid-template-columns: 1fr;
-  margin-top: 30px;
-}
-
-.contact-action > p {
-  max-width: none;
-  min-height: 0;
-}
-
-.room-caption {
-  font-family: var(--sans);
-  font-size: 12px;
-}
-
-.room-shortcuts a,
-.room-shortcuts button {
-  font-family: var(--sans);
-  font-size: 12px;
-}
-
-.room-hero {
-  padding-bottom: 32px;
-}
-
-.site-footer {
-  grid-template-columns: 1fr 1fr;
-  align-items: center;
-}
-
-.site-footer > p {
-  grid-column: 1/-1;
-  text-align: left;
-  font: 10px var(--sans);
-}
-
 @media (max-width: 760px) {
-  .room-caption {
-    font-size: 11px;
-    min-height: 67px;
-  }
-
   .room-shortcuts {
     margin-top: 5px;
   }
 
-  .room-shortcuts a,
-  .room-shortcuts button {
-    min-height: 44px;
-    font-size: 12px;
-  }
-
-  .room-hero {
-    padding-bottom: 26px;
-  }
-
   .contact-heading h2 {
     font-size: 56px;
-  }
-
-  .site-footer > div {
-    gap: 14px;
   }
 }
 
@@ -2158,34 +2032,9 @@ em {
   .site-header {
     height: 70px;
   }
-
-  .hero-intro h1 {
-    font-size: 60px;
-    margin-bottom: 12px;
-  }
-
-  .availability {
-    margin-bottom: 17px;
-  }
-
-  .short-rule {
-    margin: 17px 0 14px;
-  }
-
-  .hero-personal {
-    margin-bottom: 17px;
-  }
-
-  .room-scene {
-    margin-top: 20px;
-  }
 }
 
 @media (max-width: 760px) {
-  .project-caption p:not(.meta) {
-    font-size: 12px;
-  }
-
   .about-copy > p:not(.about-lead) {
     font-size: 14px;
   }
@@ -2195,25 +2044,6 @@ em {
     min-height: 44px;
     align-items: center;
   }
-}
-
-.room-object {
-  transform: none;
-  min-width: 0;
-  min-height: 0;
-  clip-path: none;
-  border: 0;
-  border-radius: 0;
-  pointer-events: none;
-  outline: none;
-}
-
-.room-object:hover,
-.room-object:focus-visible {
-  background: transparent;
-  border: 0;
-  box-shadow: none;
-  outline: none;
 }
 
 .object-outline {
@@ -2272,16 +2102,13 @@ em {
   }
 }
 
-.room-object {
-  z-index: 4;
-}
-
 /* Daxton's game soundtracks */
 .arcade-music {
   border-top: 1px solid var(--line);
   margin-top: 22px;
   padding-top: 18px;
 }
+
 .arcade-track {
   display: flex;
   align-items: center;
@@ -2289,6 +2116,7 @@ em {
   gap: 10px;
   font-size: 13px;
 }
+
 .arcade-track select {
   flex: 1;
   min-width: 140px;
@@ -2300,6 +2128,7 @@ em {
   color: var(--text);
   font: inherit;
 }
+
 .arcade-track button {
   min-height: 44px;
   padding: 8px 12px;
@@ -2308,21 +2137,26 @@ em {
   background: transparent;
   font-size: 12px;
 }
+
 .arcade-music .audio-control {
   font-size: 12px;
   margin-top: 12px;
 }
+
 .arcade-music .audio-control label {
   white-space: nowrap;
 }
+
 .arcade-credit {
   font: 11px var(--mono);
   color: var(--muted);
   margin: 12px 0 0;
 }
+
 #arcade-music-status:empty {
   display: none;
 }
+
 #arcade-music-status {
   font-size: 12px;
   margin-top: 12px;
@@ -2332,17 +2166,21 @@ em {
 .track-now {
   margin-top: 24px;
 }
+
 .track-now .eyebrow {
   margin-bottom: 10px;
 }
+
 .track-now h3 {
   font-size: clamp(26px, 4vw, 40px);
 }
+
 .track-now > p:last-child {
   font-size: 13px;
   color: var(--muted);
   margin: 10px 0 0;
 }
+
 #track-waveform {
   display: block;
   width: 100%;
@@ -2351,18 +2189,22 @@ em {
   border-top: 1px solid var(--line);
   border-bottom: 1px solid var(--line);
 }
+
 #tracks-panel.is-atmospheric {
   background: radial-gradient(ellipse at top right, #c2425726, transparent 65%);
 }
+
 .track-controls {
   display: flex;
   justify-content: space-between;
   align-items: center;
   gap: 20px;
 }
+
 .track-controls .button {
   min-height: 44px;
 }
+
 .track-loop {
   font-size: 13px;
   display: flex;
@@ -2370,11 +2212,13 @@ em {
   gap: 8px;
   min-height: 44px;
 }
+
 .track-loop input {
   width: 18px;
   height: 18px;
   accent-color: var(--accent);
 }
+
 .track-seek {
   display: block;
   width: 100%;
@@ -2382,15 +2226,18 @@ em {
   accent-color: var(--accent);
   min-height: 32px;
 }
+
 .track-times {
   display: flex;
   justify-content: space-between;
   color: var(--muted);
   font: 11px var(--mono);
 }
+
 .track-list {
   margin-top: 24px;
 }
+
 .track-list button {
   display: flex;
   justify-content: space-between;
@@ -2405,20 +2252,24 @@ em {
   text-align: left;
   font-size: 14px;
 }
+
 .track-list button[aria-pressed='true'] {
   background: #78b7ff14;
   color: var(--accent);
 }
+
 .track-list small {
   display: block;
   margin-top: 5px;
   color: var(--muted);
   font-size: 11px;
 }
+
 .track-list button > span:last-child {
   font: 11px var(--mono);
   color: var(--muted);
 }
+
 @media (max-width: 760px) {
   .instrument-tabs {
     gap: 8px;

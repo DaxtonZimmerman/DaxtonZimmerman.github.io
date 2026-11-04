@@ -134,7 +134,7 @@ The mobile menu uses native `details` and `summary`. Its three icon lines animat
 
 ## 13. Publish through GitHub
 
-This folder is the GitHub working copy. Push changes to `main` to run `.github/workflows/pages.yml`. It builds, checks, tests, and deploys the site. Only `dist/` becomes the public website. The repository also holds the templates and source for employers who want to inspect the code. Page metadata uses .html filenames for GitHub Pages. The older Sites copy is separate and does not automatically receive GitHub edits.
+This folder is the GitHub working copy. Push changes to `main` to run `.github/workflows/pages.yml` for source checks. Run `npm run deploy` to build, check, test, and publish the website files to the `gh-pages` branch. GitHub Pages serves that branch; pushing `main` by itself does not change the live website. Only `dist/` becomes the public website. The repository also holds the templates and source for employers who want to inspect the code. Page metadata uses .html filenames for GitHub Pages. The older Sites copy is separate and does not automatically receive GitHub edits.
 
 ## 14. The arcade soundtrack
 
@@ -149,3 +149,5 @@ Your original OGG files are in `dist/assets/audio/`, alongside MP3 playback copi
 The player reuses the audio controller in `arcade-music.js` for volume and delayed-play protection. A Web Audio analyser supplies real samples to the waveform canvas; reduced motion shows a still line. Seeking is enabled when duration metadata loads. Changing tracks pauses first, and choosing Guitar/Piano or closing stops playback. Nothing starts just from opening the dialog.
 
 The new poster target is appended to `content/room-targets.json`; existing targets and room artwork remain unchanged. The poster selects the Stranger Things Type Beat, and the normal Music button opens My tracks. The guitar/piano shortcuts still open their own tabs.
+
+The blue Music callout stays visible before the room scripts load so the older gold label baked into the illustration never flashes through. Its HTML button starts disabled; `room.js` enables it when the room is ready. The other interactive targets stay hidden until initialization.
