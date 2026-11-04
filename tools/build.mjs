@@ -52,6 +52,7 @@ const versionFiles = [
   'guitar.js',
   'arcade.js',
   'arcade-music.js',
+  'tracks.js',
   ...projects.map((project) => `assets/${project.image}`),
   'assets/triaswear-product.png',
   'assets/daxton-portrait.webp',
@@ -117,6 +118,7 @@ function roomTarget(target) {
     target.href ? `href="${target.href}"` : `type="button" data-open-${target.action}`,
     target.preview ? `data-preview-project="${target.preview}"` : '',
     target.instrument ? `data-music-instrument="${target.instrument}"` : '',
+    target.track ? `data-selected-track="${target.track}"` : '',
   ]
     .filter(Boolean)
     .join(' ');

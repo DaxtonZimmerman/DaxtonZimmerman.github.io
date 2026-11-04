@@ -10,6 +10,8 @@ if (musicDialog) {
     import(`./guitar.js?v=${moduleVersion}`),
     import(`./piano.js?v=${moduleVersion}`),
   ]);
+  const { mountTracks } = await import(`./tracks.js?v=${moduleVersion}`);
+  const tracks = mountTracks(findElement('#tracks-panel'));
   let opener = null;
   const piano = new PianoPlayer({
     isActive: () => musicDialog.open,
@@ -18,19 +20,21 @@ if (musicDialog) {
   const keys = findElements('.piano-key');
   const activeKeys = new Set();
   const shortcuts = 'asdfghjkwetyu';
-  let instrument = 'guitar';
+  let instrument = 'tracks';
   const guitar = new GuitarPlayer({ isActive: () => musicDialog.open && instrument === 'guitar' });
   const selectInstrument = setupTabs(musicDialog.querySelector('.instrument-tabs'), (button) => {
     stopOnBlur();
     instrument = button.dataset.instrument;
+    findElement('#instrument-controls').hidden = instrument === 'tracks';
     findElement('#sound-status').textContent =
       instrument === 'guitar' ? 'Choose a string to play.' : 'Choose a piano key to play.';
   });
   findElements('[data-open-music]').forEach((button) =>
     button.addEventListener('click', () => {
       opener = button;
-      const requested = button.dataset.musicInstrument || instrument;
+      const requested = button.dataset.musicInstrument || 'tracks';
       selectInstrument(musicDialog.querySelector(`[data-instrument="${requested}"]`));
+      if (button.dataset.selectedTrack) tracks.select(button.dataset.selectedTrack);
       musicDialog.showModal();
     }),
   );
@@ -121,6 +125,7 @@ if (musicDialog) {
     endNote(index);
   });
   function stopOnBlur() {
+    tracks.pause();
     piano.stopAll();
     guitar.stopAll();
     activeKeys.clear();

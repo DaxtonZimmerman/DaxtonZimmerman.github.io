@@ -141,3 +141,11 @@ This folder is the GitHub working copy. Push changes to `main` to run `.github/w
 Your original OGG files are in `dist/assets/audio/`, alongside MP3 playback copies for broad browser support. The music credit and controls are in `templates/home.html`. `dist/arcade-music.js` controls one audio element and a Web Audio volume gain. It starts only after the visitor starts or resumes a round; pausing, losing focus, closing, losing a life, or ending a round pauses the music. Resume keeps the track position, while Reset returns it to the start. Track selection switches between Swinging Pants and Retro Beat. Music failure never stops the game.
 
 **Try:** Start, pause, resume, mute, change tracks, and close the game. Confirm music never continues after closing. Change the volume using arrow keys while the slider has focus; those keys must change volume instead of moving the game paddle.
+
+## 15. Original music in the room
+
+`dist/tracks.js` adds My tracks to the existing music dialog. The list and credits live in `templates/home.html`: After Hours is credited to Daxton & Easton; the other three tracks are credited to Daxton. Original WAV files stay in Downloads; the website uses smaller MP3 copies.
+
+The player reuses the audio controller in `arcade-music.js` for volume and delayed-play protection. A Web Audio analyser supplies real samples to the waveform canvas; reduced motion shows a still line. Seeking is enabled when duration metadata loads. Changing tracks pauses first, and choosing Guitar/Piano or closing stops playback. Nothing starts just from opening the dialog.
+
+The new poster target is appended to `content/room-targets.json`; existing targets and room artwork remain unchanged. The poster selects the Stranger Things Type Beat, and the normal Music button opens My tracks. The guitar/piano shortcuts still open their own tabs.

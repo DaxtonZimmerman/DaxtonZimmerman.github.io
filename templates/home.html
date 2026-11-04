@@ -139,13 +139,23 @@
     <div class="dialog-inner">
       <button class="dialog-close" aria-label="Close music corner">×</button>
       <p class="eyebrow">A MUSIC BREAK</p>
-      <h2 id="music-title">Play a <em>few notes.</em></h2>
-      <div class="instrument-tabs" role="tablist" aria-label="Choose an instrument">
+      <h2 id="music-title">My music <em>corner.</em></h2>
+      <div class="instrument-tabs" role="tablist" aria-label="Choose music">
+        <button
+          role="tab"
+          id="tracks-tab"
+          aria-controls="tracks-panel"
+          aria-selected="true"
+          data-instrument="tracks"
+        >
+          My tracks
+        </button>
         <button
           role="tab"
           id="guitar-tab"
           aria-controls="guitar-panel"
-          aria-selected="true"
+          aria-selected="false"
+          tabindex="-1"
           data-instrument="guitar"
         >
           Guitar</button
@@ -160,7 +170,93 @@
           Piano
         </button>
       </div>
-      <section id="guitar-panel" role="tabpanel" aria-labelledby="guitar-tab">
+      <section id="tracks-panel" role="tabpanel" aria-labelledby="tracks-tab">
+        <div class="track-now">
+          <p class="eyebrow">NOW SELECTED</p>
+          <h3 id="track-title">After Hours</h3>
+          <p id="track-credit">Daxton &amp; Easton</p>
+        </div>
+        <canvas id="track-waveform" width="640" height="120" aria-label="Audio waveform"></canvas>
+        <audio id="track-audio" src="assets/audio/after-hours.mp3" preload="none"></audio>
+        <div class="track-controls">
+          <button id="track-play" class="button button-primary" type="button">Play track</button
+          ><label class="track-loop"><input id="track-loop" type="checkbox" /> Loop</label>
+        </div>
+        <label class="sr-only" for="track-seek">Track position</label
+        ><input
+          id="track-seek"
+          class="track-seek"
+          type="range"
+          min="0"
+          max="72"
+          value="0"
+          step="0.1"
+          disabled
+        />
+        <div class="track-times">
+          <span id="track-elapsed">0:00</span><span id="track-duration">1:12</span>
+        </div>
+        <div class="audio-control">
+          <label for="track-volume">Volume</label
+          ><input id="track-volume" type="range" min="0" max="100" value="30" /><output
+            for="track-volume"
+            id="track-volume-output"
+            >30%</output
+          >
+        </div>
+        <p id="track-status" class="sound-status" role="status"></p>
+        <div class="track-list" role="group" aria-label="Choose a track">
+          <button
+            type="button"
+            data-track="after-hours"
+            data-source="assets/audio/after-hours.mp3"
+            data-title="After Hours"
+            data-credit="Daxton &amp; Easton"
+            data-duration="72"
+            aria-pressed="true"
+          >
+            <span>After Hours<small>Daxton &amp; Easton</small></span
+            ><span>1:12</span>
+          </button>
+          <button
+            type="button"
+            data-track="stranger"
+            data-source="assets/audio/stranger-things-beat.mp3"
+            data-title="Stranger Things Type Beat"
+            data-credit="Daxton Zimmerman"
+            data-duration="44"
+            aria-pressed="false"
+          >
+            <span>Stranger Things Type Beat<small>Daxton Zimmerman</small></span
+            ><span>0:44</span>
+          </button>
+          <button
+            type="button"
+            data-track="swinging-pants"
+            data-source="assets/audio/swinging-pants.mp3"
+            data-title="Swinging Pants"
+            data-credit="Daxton Zimmerman"
+            data-duration="24"
+            aria-pressed="false"
+          >
+            <span>Swinging Pants<small>Daxton Zimmerman</small></span
+            ><span>0:24</span>
+          </button>
+          <button
+            type="button"
+            data-track="retro-beat"
+            data-source="assets/audio/retro-beat.mp3"
+            data-title="Retro Beat"
+            data-credit="Daxton Zimmerman"
+            data-duration="15"
+            aria-pressed="false"
+          >
+            <span>Retro Beat<small>Daxton Zimmerman</small></span
+            ><span>0:15</span>
+          </button>
+        </div>
+      </section>
+      <section id="guitar-panel" role="tabpanel" aria-labelledby="guitar-tab" hidden>
         <div class="guitar-strings" role="group" aria-label="Six playable guitar strings">
           <button class="guitar-string" data-string="0" aria-label="Pluck E2 string">
             <span>E2</span><i style="--string-width: 3.5px" aria-hidden="true"></i
@@ -247,15 +343,19 @@
           window is open.
         </p>
       </section>
-      <div class="audio-control">
-        <label for="music-volume">Volume</label
-        ><input id="music-volume" type="range" min="0" max="100" value="25" /><output
-          for="music-volume"
-          id="volume-output"
-          >25%</output
-        >
+      <div id="instrument-controls" hidden>
+        <div class="audio-control">
+          <label for="music-volume">Volume</label
+          ><input id="music-volume" type="range" min="0" max="100" value="25" /><output
+            for="music-volume"
+            id="volume-output"
+            >25%</output
+          >
+        </div>
+        <p class="sound-status" id="sound-status" role="status">
+          Choose a string or a key to play.
+        </p>
       </div>
-      <p class="sound-status" id="sound-status" role="status">Choose a string or a key to play.</p>
     </div>
   </dialog>
   {{PROJECT_PREVIEW}}

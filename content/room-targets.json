@@ -59,6 +59,17 @@
       "view": [58, 143],
       "path": "M22 1 L51 6 L57 14 L47 133 L42 142 L2 134 L1 127 L17 9 Z",
       "instrument": "piano"
+    },
+    {
+      "id": "poster",
+      "label": "Stranger Things poster \u2014 hear my inspired beat",
+      "hint": "Poster \u2014 hear my Stranger Things-inspired beat.",
+      "action": "music",
+      "instrument": "tracks",
+      "track": "stranger",
+      "box": [1014, 152, 116, 150],
+      "view": [116, 150],
+      "path": "M1 1 L114 24 L114 149 L1 125 Z"
     }
   ]
 }

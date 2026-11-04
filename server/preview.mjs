@@ -14,6 +14,9 @@ const types = {
   '.xml': 'application/xml; charset=utf-8',
   '.svg': 'image/svg+xml',
   '.pdf': 'application/pdf',
+  '.mp3': 'audio/mpeg',
+  '.ogg': 'audio/ogg',
+  '.wav': 'audio/wav',
 };
 const json = (res, status, data) => {
   res.writeHead(status, { 'Content-Type': 'application/json', 'Cache-Control': 'no-store' });
@@ -42,12 +45,41 @@ createServer(async (req, res) => {
       status = 404;
     }
     const data = await readFile(path);
-    res.writeHead(status, {
+    const headers = {
       'Content-Type': types[extname(path)] || 'application/octet-stream',
       'X-Content-Type-Options': 'nosniff',
       'Referrer-Policy': 'strict-origin-when-cross-origin',
       'Cache-Control': 'no-cache',
-    });
+      'Accept-Ranges': 'bytes',
+      'Content-Length': data.length,
+    };
+    // Media players request a byte range when the listener seeks.
+    if (status === 200 && req.headers.range) {
+      const range = /^bytes=(\d*)-(\d*)$/.exec(req.headers.range);
+      const start = range?.[1] ? Number(range[1]) : Math.max(0, data.length - Number(range?.[2]));
+      const end =
+        range?.[1] && range?.[2] ? Math.min(Number(range[2]), data.length - 1) : data.length - 1;
+      if (
+        !range ||
+        (!range[1] && !range[2]) ||
+        !Number.isFinite(start) ||
+        start > end ||
+        start >= data.length
+      ) {
+        res.writeHead(416, { 'Content-Range': `bytes */${data.length}` });
+        res.end();
+        return;
+      }
+      const chunk = data.subarray(start, end + 1);
+      res.writeHead(206, {
+        ...headers,
+        'Content-Length': chunk.length,
+        'Content-Range': `bytes ${start}-${end}/${data.length}`,
+      });
+      res.end(req.method === 'HEAD' ? undefined : chunk);
+      return;
+    }
+    res.writeHead(status, headers);
     res.end(req.method === 'HEAD' ? undefined : data);
   } catch {
     json(res, 500, { error: 'Request unavailable' });
