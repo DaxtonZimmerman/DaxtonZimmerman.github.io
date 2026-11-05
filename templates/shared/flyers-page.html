@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{{TITLE}}</title>
+    <meta name="description" content="{{DESCRIPTION}}" />
+    <meta name="theme-color" content="#f6f4ee" />
+    <meta property="og:title" content="{{TITLE}}" />
+    <meta property="og:description" content="{{DESCRIPTION}}" />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:title" content="{{TITLE}}" />
+    <meta name="twitter:description" content="{{DESCRIPTION}}" />
+    <!-- PAGE_METADATA -->
+    <link
+      rel="preload"
+      href="assets/fonts/dm-sans-latin.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link rel="stylesheet" href="flyers.css?v={{VERSION}}" />
+    <script type="module" src="site.js?v={{VERSION}}"></script>
+    {{PAGE_SCRIPTS}}
+  </head>
+  <body>
+    <a class="skip" href="#main">Skip to content</a>
+    <header class="header wrap">
+      <a class="brand" href="agent-flyers.html">Agent Flyers<span>Daxton Zimmerman</span></a>
+      <nav aria-label="Main navigation">
+        <a href="#samples">Flyers</a><a href="#contact">Contact</a>
+      </nav>
+    </header>
+    {{CONTENT}}
+    <footer class="footer wrap">
+      <span>Daxton Zimmerman</span>
+      <a href="index.html">Web development portfolio</a>
+      <details>
+        <summary>Sample credits</summary>
+        <p>Original layouts with placeholder property details.</p>
+        <p>
+          Photos:
+          <a
+            href="https://unsplash.com/photos/modern-white-house-with-glass-garage-doors-and-plants-MUiv6OcHoto"
+            >Good Life Construction</a
+          >
+          and
+          <a
+            href="https://unsplash.com/photos/modern-house-with-palm-trees-and-green-lawn-BnRBFRv2WZA"
+            >Alef Morais</a
+          >, via <a href="https://unsplash.com/license">Unsplash</a>.
+        </p>
+      </details>
+    </footer>
+  </body>
+</html>

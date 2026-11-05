@@ -91,5 +91,6 @@ console.log(
 );
 
 const sitemap = await readFile(resolve(root, 'sitemap.xml'), 'utf8');
-assert.equal((sitemap.match(/<loc>/g) || []).length, 10, 'ten indexable pages in sitemap');
+assert.equal((sitemap.match(/<loc>/g) || []).length, 11, 'eleven indexable pages in sitemap');
+assert(sitemap.includes('/agent-flyers.html'), 'Agent Flyers included in sitemap');
 assert(!sitemap.includes('/404'), '404 excluded from sitemap');

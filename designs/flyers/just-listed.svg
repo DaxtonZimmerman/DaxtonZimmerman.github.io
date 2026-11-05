@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1350" viewBox="0 0 1080 1350">
+  <defs>
+    <clipPath id="photo"><rect x="58" y="135" width="964" height="652" /></clipPath>
+  </defs>
+  <rect width="1080" height="1350" fill="#f4ece0" />
+  <g fill="#74352a" font-family="Helvetica, Arial, sans-serif" font-size="22" letter-spacing="4">
+    <text x="58" y="78">AGENT NAME</text>
+    <text x="1022" y="78" text-anchor="end">SAMPLE DESIGN</text>
+  </g>
+  <rect x="49" y="126" width="982" height="670" fill="none" stroke="#a66450" />
+  <image href="garden.jpg" x="58" y="135" width="964" height="652" preserveAspectRatio="xMinYMid slice" clip-path="url(#photo)" />
+  <g fill="#74352a">
+    <text x="48" y="957" font-family="Georgia, serif" font-style="italic" font-size="137" letter-spacing="-8">Just Listed</text>
+    <path d="M58 1003H1022" stroke="#a66450" />
+    <text x="58" y="1072" font-family="Georgia, serif" font-size="42">Property address</text>
+    <text x="1022" y="1072" text-anchor="end" font-family="Helvetica, Arial, sans-serif" font-size="22" letter-spacing="3">CITY, STATE</text>
+    <path d="M58 1120H1022" stroke="#a66450" />
+  </g>
+  <rect x="0" y="1178" width="1080" height="172" fill="#74352a" />
+  <g font-family="Helvetica, Arial, sans-serif" font-size="23" letter-spacing="4" fill="#f4ece0">
+    <text x="58" y="1273">BEDS</text>
+    <text x="540" y="1273" text-anchor="middle">BATHS</text>
+    <text x="1022" y="1273" text-anchor="end">SQ FT</text>
+    <path d="M332 1233V1299M746 1233V1299" stroke="#c79a86" />
+  </g>
+</svg>

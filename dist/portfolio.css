@@ -81,6 +81,34 @@
   padding-top: 10px;
 }
 
+.flyer-project {
+  display: grid;
+  grid-column: 1 / -1;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr);
+  align-items: center;
+}
+
+.flyer-thumbs {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  padding: 24px;
+  background: #243333;
+}
+
+.flyer-thumbs img {
+  display: block;
+  width: min(44%, 130px);
+  height: auto;
+  box-shadow: 0 6px 16px #0005;
+}
+
+@media (max-width: 600px) {
+  .flyer-project {
+    grid-template-columns: 1fr;
+  }
+}
+
 .section-top > .text-link {
   align-self: end;
   white-space: nowrap;
@@ -1559,6 +1587,12 @@ html:not(.enhanced) .trias-gallery figure[hidden] {
 .service-list p {
   font-size: 16px;
   color: var(--muted);
+}
+
+.flyer-service {
+  grid-column: 1 / -1;
+  border-top: 1px solid var(--line);
+  padding-top: 18px;
 }
 
 /* Contact form */

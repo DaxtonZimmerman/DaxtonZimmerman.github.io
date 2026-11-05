@@ -151,3 +151,10 @@ The player reuses the audio controller in `arcade-music.js` for volume and delay
 The new poster target is appended to `content/room-targets.json`; existing targets and room artwork remain unchanged. The poster selects the Stranger Things Type Beat, and the normal Music button opens My tracks. The guitar/piano shortcuts still open their own tabs.
 
 The blue Music callout stays visible before the room scripts load so the older gold label baked into the illustration never flashes through. Its HTML button starts disabled; `room.js` enables it when the room is ready. The other interactive targets stay hidden until initialization.
+# Agent Flyers
+
+The separate design page starts in `templates/agent-flyers.html`. Its shell is `templates/shared/flyers-page.html`, and its styles are all in `dist/flyers.css`. It does not load the room or portfolio styles.
+
+In `dist/flyers.js`, `data-preview` buttons open the native HTML dialog. The browser handles Escape and keyboard focus inside the dialog. `data-choose` links select a sample in the contact form. `flyerInquiry()` combines the selected sample and optional project link with the visitor’s message. `sendInquiry()` from `contact.js` handles delivery to the existing Gmail receiver.
+
+To change a flyer, edit its SVG in `designs/flyers/` and run `node tools/export-flyers.mjs`. The script adds the real photo to the artwork and exports a full-size PNG and a smaller WebP for the gallery. The flyer titles, download links, and form options are in `templates/agent-flyers.html`.

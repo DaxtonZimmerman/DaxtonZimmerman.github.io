@@ -4,7 +4,8 @@
     <h1>My <em>projects.</em></h1>
     <div class="work-page-intro">
       <p class="page-lead">
-        These are websites I’ve made and use day to day, plus an HVAC website mockup.
+        These are websites I’ve made and use day to day, plus an HVAC website mockup and real estate
+        flyers.
       </p>
       <a class="text-link" href="assets/Daxton-Zimmerman-Resume.pdf" target="_blank" rel="noopener"
         >View résumé<span class="sr-only"> (PDF, opens a new tab)</span></a
@@ -12,7 +13,37 @@
     </div>
   </section>
   <section class="work-section section-pad" aria-label="Project collection">
-    <div class="project-grid">{{PROJECTS}}</div>
+    <div class="project-grid">
+      {{PROJECTS}}
+      <a
+        class="project-card flyer-project"
+        href="agent-flyers.html"
+        aria-labelledby="flyer-project-title"
+      >
+        <div class="flyer-thumbs" aria-hidden="true">
+          <img
+            src="assets/flyers/open-house.webp"
+            alt=""
+            width="800"
+            height="1000"
+            loading="lazy"
+          />
+          <img
+            src="assets/flyers/just-listed.webp"
+            alt=""
+            width="800"
+            height="1000"
+            loading="lazy"
+          />
+        </div>
+        <div class="project-caption">
+          <p class="meta">GRAPHIC DESIGN</p>
+          <h2 class="project-title" id="flyer-project-title">Agent Flyers</h2>
+          <p>Open House and Just Listed flyers</p>
+          <span class="text-link">View flyer designs</span>
+        </div>
+      </a>
+    </div>
   </section>
   <section class="work-end section-pad">
     <p>Have a website idea or a role you think I’d be a good fit for? Let’s talk.</p>

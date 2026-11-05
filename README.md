@@ -37,6 +37,7 @@ The build writes formatted HTML into `dist/`. Edit the templates for page conten
 | Editable Codepath example | `templates/codepath.html`, `dist/lesson.js` |
 | Contact form and email receiver | `dist/contact.js`, `integrations/google-mail/Code.gs` |
 | Page builder and metadata | `tools/build.mjs`, `tools/page-metadata.mjs` |
+| Agent Flyers | `templates/agent-flyers.html`, `templates/shared/flyers-page.html`, `dist/flyers.css`, `dist/flyers.js` |
 
 For a full explanation and practice exercises, use [the code walkthrough](docs/CODE_WALKTHROUGH.md).
 
@@ -84,3 +85,11 @@ This branch-based route replaces the artifact deployment that repeatedly timed o
 Canonical page links use `.html` filenames so they work directly on GitHub Pages. The contact form uses the existing Google Apps Script receiver. Physical iPhone/iOS Safari and VoiceOver checks remain separate from browser viewport checks.
 
 Original artwork and screenshots remain in `dist/assets/`. Self-hosted font files include their required licenses in `dist/assets/fonts/`.
+
+## Agent Flyers
+
+Preview at `http://127.0.0.1:8777/agent-flyers.html`. The public page is `https://daxtonzimmerman.github.io/agent-flyers.html`.
+
+The Open House and Just Listed flyers are original SVG layouts with real photography and placeholder property details. Edit the files in `designs/flyers/` and run `node tools/export-flyers.mjs` to refresh their PNG and WebP exports. The page footer credits the photographers. Daxton wrote the introduction.
+
+`flyers.js` opens previews and sends the selected sample, message and optional photo/project link through the existing receiver in `contact.js`. The form does not upload files. It preserves the visitor’s text on failure and only reports success after receiver acceptance.

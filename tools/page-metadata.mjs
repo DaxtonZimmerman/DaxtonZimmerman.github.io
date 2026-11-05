@@ -16,8 +16,17 @@ export function pageUrl(file, origin) {
 // The output filename determines its URL. Project pages use their real screenshot.
 export async function pageMetadata(file, { site, projects, root }) {
   const project = projects.find((item) => file === `work/${item.id}.html`);
-  const image = project ? `assets/${project.image}` : site.shareImage;
-  const imageAlt = project ? `Screenshot of the ${project.name} website` : site.shareImageAlt;
+  const flyers = file === 'agent-flyers.html';
+  const image = flyers
+    ? 'assets/flyers/open-house.png'
+    : project
+      ? `assets/${project.image}`
+      : site.shareImage;
+  const imageAlt = flyers
+    ? 'Forest green Open House flyer from Agent Flyers'
+    : project
+      ? `Screenshot of the ${project.name} website`
+      : site.shareImageAlt;
   const imageData = await readFile(new URL(`dist/${image}`, root));
   const isPng = image.endsWith('.png');
   const { width, height } = await sharp(imageData).metadata();

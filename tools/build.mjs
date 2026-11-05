@@ -19,6 +19,7 @@ for (const name of [
   'project-dialog',
   'project-tab',
   'project-panel',
+  'flyers-page',
 ]) {
   shared[name] = await readFile(new URL(`templates/shared/${name}.html`, root), 'utf8');
 }
@@ -53,6 +54,10 @@ const versionFiles = [
   'arcade.js',
   'arcade-music.js',
   'tracks.js',
+  'flyers.css',
+  'flyers.js',
+  'assets/flyers/open-house.webp',
+  'assets/flyers/just-listed.webp',
   ...projects.map((project) => `assets/${project.image}`),
   'assets/triaswear-product.png',
   'assets/daxton-portrait.webp',
@@ -136,6 +141,14 @@ function roomTarget(target) {
 }
 
 const pages = [
+  {
+    file: 'agent-flyers.html',
+    template: 'agent-flyers',
+    layout: 'flyers-page',
+    title: 'Agent Flyers — Daxton Zimmerman',
+    description: 'Agent Flyers. Open house and just-listed flyer designs by Daxton Zimmerman.',
+    scripts: ['flyers'],
+  },
   {
     file: 'index.html',
     template: 'home',
@@ -241,7 +254,7 @@ for (const page of pages) {
       `href="${base}${page.active}.html"`,
       `href="${base}${page.active}.html" aria-current="page"`,
     );
-  const html = fillTemplate(shared.page, {
+  const html = fillTemplate(shared[page.layout || 'page'], {
     TITLE: escapeHtml(page.title),
     DESCRIPTION: escapeHtml(page.description),
     BASE: base,

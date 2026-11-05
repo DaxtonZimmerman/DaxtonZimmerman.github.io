@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1350" viewBox="0 0 1080 1350">
+  <defs>
+    <clipPath id="photo"><rect y="400" width="1080" height="720" /></clipPath>
+  </defs>
+  <rect width="1080" height="1350" fill="#142e29" />
+  <g fill="#f4f1e5" font-family="Helvetica, Arial, sans-serif">
+    <text x="66" y="77" font-size="24" letter-spacing="4">AGENT NAME</text>
+    <text x="1014" y="77" text-anchor="end" font-size="20" letter-spacing="3">SAMPLE DESIGN</text>
+    <path d="M66 109H1014" stroke="#a5b8a6" />
+    <text x="60" y="229" font-size="137" font-weight="700" letter-spacing="-7">Open</text>
+    <text x="60" y="351" font-size="137" font-weight="700" letter-spacing="-7">House</text>
+    <image href="modern.jpg" y="400" width="1080" height="720" preserveAspectRatio="xMidYMid slice" clip-path="url(#photo)" />
+    <text x="66" y="1223" font-size="43" font-weight="700">Property address</text>
+    <text x="68" y="1270" font-size="24" letter-spacing="3">CITY, STATE</text>
+  </g>
+  <g fill="#142e29" font-family="Helvetica, Arial, sans-serif">
+    <rect x="723" y="1027" width="357" height="181" fill="#dbe58f" />
+    <text x="762" y="1093" font-size="34" font-weight="700">Date</text>
+    <path d="M762 1116H1038" stroke="#142e29" />
+    <text x="762" y="1171" font-size="34" font-weight="700">Time</text>
+  </g>
+</svg>
