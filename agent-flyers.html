@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Agent Flyers — Daxton Zimmerman</title>
+    <meta
+      name="description"
+      content="Agent Flyers. Open house and just-listed flyer designs by Daxton Zimmerman."
+    />
+    <meta name="theme-color" content="#f6f4ee" />
+    <meta property="og:title" content="Agent Flyers — Daxton Zimmerman" />
+    <meta
+      property="og:description"
+      content="Agent Flyers. Open house and just-listed flyer designs by Daxton Zimmerman."
+    />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:title" content="Agent Flyers — Daxton Zimmerman" />
+    <meta
+      name="twitter:description"
+      content="Agent Flyers. Open house and just-listed flyer designs by Daxton Zimmerman."
+    />
+    <link rel="canonical" href="https://daxtonzimmerman.github.io/agent-flyers.html" />
+    <meta property="og:url" content="https://daxtonzimmerman.github.io/agent-flyers.html" />
+    <meta property="og:site_name" content="Daxton Zimmerman" />
+    <meta property="og:locale" content="en_US" />
+    <meta
+      property="og:image"
+      content="https://daxtonzimmerman.github.io/assets/flyers/open-house.png"
+    />
+    <meta property="og:image:alt" content="Forest green Open House flyer from Agent Flyers" />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="1080" />
+    <meta property="og:image:height" content="1350" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:image"
+      content="https://daxtonzimmerman.github.io/assets/flyers/open-house.png"
+    />
+    <meta name="twitter:image:alt" content="Forest green Open House flyer from Agent Flyers" />
+    <link
+      rel="preload"
+      href="assets/fonts/dm-sans-latin.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link rel="stylesheet" href="flyers.css?v=61a610e55b" />
+    <script type="module" src="site.js?v=61a610e55b"></script>
+    <script type="module" src="flyers.js?v=61a610e55b"></script>
+  </head>
+  <body>
+    <a class="skip" href="#main">Skip to content</a>
+    <header class="header wrap">
+      <a class="brand" href="agent-flyers.html">Agent Flyers<span>Daxton Zimmerman</span></a>
+      <nav aria-label="Main navigation">
+        <a href="#samples">Flyers</a><a href="#contact">Contact</a>
+      </nav>
+    </header>
+    <main id="main" tabindex="-1">
+      <section class="intro wrap">
+        <div>
+          <p class="label">Real estate design</p>
+          <h1>Agent Flyers<span>by Daxton.</span></h1>
+        </div>
+        <div>
+          <p class="intro-copy">
+            I would like to design anything that’s appealing to people and gets their attention
+            super quick. I love designing and having creative freedom to make things look as cool as
+            they can.
+          </p>
+          <a class="button" href="#contact">Request a flyer</a>
+        </div>
+      </section>
+      <section class="samples wrap" id="samples" aria-labelledby="samples-title">
+        <div class="section-heading">
+          <h2 id="samples-title">Flyer designs</h2>
+          <span>Portfolio samples</span>
+        </div>
+        <div class="sample-grid">
+          <article class="sample">
+            <button
+              class="sample-image"
+              type="button"
+              data-preview
+              aria-label="Enlarge Open House flyer"
+              aria-haspopup="dialog"
+              disabled
+            >
+              <img
+                src="assets/flyers/open-house.webp"
+                width="800"
+                height="1000"
+                alt="Forest green Open House flyer with a white modern house and a lime date and time panel."
+              />
+            </button>
+            <div class="sample-caption">
+              <h3>Open House</h3>
+              <div class="sample-actions">
+                <a href="assets/flyers/open-house.png" download aria-label="Download Open House PNG"
+                  >PNG</a
+                >
+                <a class="choose" href="#contact" data-choose="Open House">Request this style</a>
+              </div>
+            </div>
+          </article>
+          <article class="sample">
+            <button
+              class="sample-image"
+              type="button"
+              data-preview
+              aria-label="Enlarge Just Listed flyer"
+              aria-haspopup="dialog"
+              disabled
+            >
+              <img
+                src="assets/flyers/just-listed.webp"
+                width="800"
+                height="1000"
+                alt="Cream and rust Just Listed flyer with a framed garden photograph and a row for property details."
+              />
+            </button>
+            <div class="sample-caption">
+              <h3>Just Listed</h3>
+              <div class="sample-actions">
+                <a
+                  href="assets/flyers/just-listed.png"
+                  download
+                  aria-label="Download Just Listed PNG"
+                  >PNG</a
+                >
+                <a class="choose" href="#contact" data-choose="Just Listed">Request this style</a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+      <section class="contact wrap" id="contact" aria-labelledby="contact-title">
+        <div class="contact-heading">
+          <p class="label">Contact</p>
+          <h2 id="contact-title">Request a flyer</h2>
+          <a href="mailto:daxtonmz0021@gmail.com">daxtonmz0021@gmail.com</a>
+        </div>
+        <form id="flyer-form" action="agent-flyers.html#contact" method="POST">
+          <div class="form-row">
+            <div>
+              <label for="name">Your name</label
+              ><input id="name" name="name" autocomplete="name" required maxlength="100" />
+            </div>
+            <div>
+              <label for="email">Email</label
+              ><input
+                id="email"
+                name="email"
+                type="email"
+                autocomplete="email"
+                required
+                maxlength="254"
+              />
+            </div>
+          </div>
+          <label for="design">Flyer style</label
+          ><select id="design" name="design">
+            <option value="Not selected">Not selected</option>
+            <option>Open House</option>
+            <option>Just Listed</option>
+            <option>Other</option>
+          </select>
+          <label for="message">Project details</label
+          ><textarea
+            id="message"
+            name="message"
+            rows="5"
+            required
+            minlength="10"
+            maxlength="4500"
+            aria-describedby="message-hint"
+          ></textarea>
+          <p id="message-hint" class="hint">At least 10 characters.</p>
+          <label for="photos">Photo or project link (optional)</label
+          ><input id="photos" name="photos" type="url" maxlength="300" placeholder="https://" />
+          <div class="trap" aria-hidden="true">
+            <label>Leave this blank<input name="_honey" tabindex="-1" autocomplete="off" /></label>
+          </div>
+          <p class="hint">I’ll use your details to reply to your message.</p>
+          <button class="button" id="flyer-submit" type="submit" disabled>Send message</button>
+          <p id="flyer-status" role="status" tabindex="-1"></p>
+          <noscript
+            ><p>
+              JavaScript is needed to send this form. Email daxtonmz0021@gmail.com instead.
+            </p></noscript
+          >
+        </form>
+      </section>
+      <dialog id="sample-dialog" aria-labelledby="preview-title">
+        <div class="dialog-heading">
+          <h2 id="preview-title">Flyer preview</h2>
+          <button type="button" class="close" aria-label="Close preview">Close</button>
+        </div>
+        <img id="preview-image" width="1080" height="1350" alt="" />
+        <div class="dialog-footer">
+          <a id="preview-download" download>Download PNG</a
+          ><button type="button" class="close">Close preview</button>
+        </div>
+      </dialog>
+    </main>
+
+    <footer class="footer wrap">
+      <span>Daxton Zimmerman</span>
+      <a href="index.html">Web development portfolio</a>
+      <details>
+        <summary>Sample credits</summary>
+        <p>Original layouts with placeholder property details.</p>
+        <p>
+          Photos:
+          <a
+            href="https://unsplash.com/photos/modern-white-house-with-glass-garage-doors-and-plants-MUiv6OcHoto"
+            >Good Life Construction</a
+          >
+          and
+          <a
+            href="https://unsplash.com/photos/modern-house-with-palm-trees-and-green-lawn-BnRBFRv2WZA"
+            >Alef Morais</a
+          >, via <a href="https://unsplash.com/license">Unsplash</a>.
+        </p>
+      </details>
+    </footer>
+  </body>
+</html>
