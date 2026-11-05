@@ -7,6 +7,7 @@ const root = new URL('../', import.meta.url);
 const formatOptions = await resolveConfig(new URL('.prettierrc.json', root).pathname);
 const site = JSON.parse(await readFile(new URL('content/site.json', root), 'utf8'));
 const projects = JSON.parse(await readFile(new URL('content/projects.json', root), 'utf8'));
+const flyers = JSON.parse(await readFile(new URL('content/flyers.json', root), 'utf8'));
 const room = JSON.parse(await readFile(new URL('content/room-targets.json', root), 'utf8'));
 
 const shared = {};
@@ -20,6 +21,7 @@ for (const name of [
   'project-tab',
   'project-panel',
   'flyers-page',
+  'flyer-card',
 ]) {
   shared[name] = await readFile(new URL(`templates/shared/${name}.html`, root), 'utf8');
 }
@@ -56,8 +58,7 @@ const versionFiles = [
   'tracks.js',
   'flyers.css',
   'flyers.js',
-  'assets/flyers/open-house.webp',
-  'assets/flyers/just-listed.webp',
+  ...flyers.map((flyer) => `assets/flyers/${flyer.id}.webp`),
   ...projects.map((project) => `assets/${project.image}`),
   'assets/triaswear-product.png',
   'assets/daxton-portrait.webp',
@@ -146,8 +147,22 @@ const pages = [
     template: 'agent-flyers',
     layout: 'flyers-page',
     title: 'Agent Flyers — Daxton Zimmerman',
-    description: 'Agent Flyers. Open house and just-listed flyer designs by Daxton Zimmerman.',
+    description: 'Open house, just-listed, just-sold, and price update flyers by Daxton Zimmerman.',
     scripts: ['flyers'],
+    values: {
+      FLYER_COUNT: String(flyers.length),
+      FLYER_CARDS: flyers
+        .map((flyer, index) =>
+          fillTemplate(shared['flyer-card'], {
+            ID: escapeHtml(flyer.id),
+            NAME: escapeHtml(flyer.name),
+            ALT: escapeHtml(flyer.alt),
+            LOADING: index > 2 ? 'loading="lazy"' : '',
+          }),
+        )
+        .join('\n'),
+      FLYER_OPTIONS: flyers.map(({ name }) => `<option>${escapeHtml(name)}</option>`).join('\n'),
+    },
   },
   {
     file: 'index.html',

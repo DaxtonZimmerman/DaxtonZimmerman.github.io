@@ -15,62 +15,9 @@
   <section class="samples wrap" id="samples" aria-labelledby="samples-title">
     <div class="section-heading">
       <h2 id="samples-title">Flyer designs</h2>
-      <span>Portfolio samples</span>
+      <span>{{FLYER_COUNT}} designs</span>
     </div>
-    <div class="sample-grid">
-      <article class="sample">
-        <button
-          class="sample-image"
-          type="button"
-          data-preview
-          aria-label="Enlarge Open House flyer"
-          aria-haspopup="dialog"
-          disabled
-        >
-          <img
-            src="assets/flyers/open-house.webp"
-            width="800"
-            height="1000"
-            alt="Forest green Open House flyer with a white modern house and a lime date and time panel."
-          />
-        </button>
-        <div class="sample-caption">
-          <h3>Open House</h3>
-          <div class="sample-actions">
-            <a href="assets/flyers/open-house.png" download aria-label="Download Open House PNG"
-              >PNG</a
-            >
-            <a class="choose" href="#contact" data-choose="Open House">Request this style</a>
-          </div>
-        </div>
-      </article>
-      <article class="sample">
-        <button
-          class="sample-image"
-          type="button"
-          data-preview
-          aria-label="Enlarge Just Listed flyer"
-          aria-haspopup="dialog"
-          disabled
-        >
-          <img
-            src="assets/flyers/just-listed.webp"
-            width="800"
-            height="1000"
-            alt="Cream and rust Just Listed flyer with a framed garden photograph and a row for property details."
-          />
-        </button>
-        <div class="sample-caption">
-          <h3>Just Listed</h3>
-          <div class="sample-actions">
-            <a href="assets/flyers/just-listed.png" download aria-label="Download Just Listed PNG"
-              >PNG</a
-            >
-            <a class="choose" href="#contact" data-choose="Just Listed">Request this style</a>
-          </div>
-        </div>
-      </article>
-    </div>
+    <div class="sample-grid">{{FLYER_CARDS}}</div>
   </section>
   <section class="contact wrap" id="contact" aria-labelledby="contact-title">
     <div class="contact-heading">
@@ -99,8 +46,7 @@
       <label for="design">Flyer style</label
       ><select id="design" name="design">
         <option value="Not selected">Not selected</option>
-        <option>Open House</option>
-        <option>Just Listed</option>
+        {{FLYER_OPTIONS}}
         <option>Other</option>
       </select>
       <label for="message">Project details</label

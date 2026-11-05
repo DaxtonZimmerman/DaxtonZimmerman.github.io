@@ -1,0 +1,32 @@
+[
+  {
+    "id": "open-house-classic",
+    "name": "Open House (Classic)",
+    "photo": "classic.jpg",
+    "alt": "Cream and burgundy Open House flyer with a traditional white house and separate date and time fields."
+  },
+  {
+    "id": "just-sold",
+    "name": "Just Sold",
+    "photo": "garden.jpg",
+    "alt": "Navy and gold Just Sold flyer with a modern house and garden photograph."
+  },
+  {
+    "id": "price-update",
+    "name": "Price Update",
+    "photo": "modern.jpg",
+    "alt": "Cobalt and white Price Update flyer with a modern house photograph and space for the updated price."
+  },
+  {
+    "id": "open-house",
+    "name": "Open House",
+    "photo": "modern.jpg",
+    "alt": "Forest green Open House flyer with a white modern house and a lime date and time panel."
+  },
+  {
+    "id": "just-listed",
+    "name": "Just Listed",
+    "photo": "garden.jpg",
+    "alt": "Cream and rust Just Listed flyer with a framed garden photograph and a row for property details."
+  }
+]

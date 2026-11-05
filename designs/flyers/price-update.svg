@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1350" viewBox="0 0 1080 1350">
+  <defs>
+    <clipPath id="photo"><rect width="1080" height="720" /></clipPath>
+  </defs>
+  <rect width="1080" height="1350" fill="#f6f8ff" />
+  <image href="modern.jpg" width="1080" height="720" preserveAspectRatio="xMidYMid slice" clip-path="url(#photo)" />
+  <rect x="790" y="50" width="230" height="50" fill="#1a3aab" />
+  <text x="905" y="82" fill="#fff" font-family="Helvetica, Arial, sans-serif" text-anchor="middle" font-size="19" font-weight="700" letter-spacing="2.4">SAMPLE DESIGN</text>
+
+  <g fill="#1a3aab" font-family="Helvetica, Arial, sans-serif">
+    <rect x="60" y="776" width="32" height="4" />
+    <text x="106" y="784" font-size="21" font-weight="700" letter-spacing="3">LISTING UPDATE</text>
+    <text x="53" y="915" font-size="132" font-weight="700" letter-spacing="-7">Price Update</text>
+  </g>
+
+  <rect x="60" y="967" width="452" height="202" fill="#1a3aab" />
+  <g fill="#fff" font-family="Helvetica, Arial, sans-serif">
+    <text x="94" y="1019" font-size="22" font-weight="700" letter-spacing="3">NEW PRICE</text>
+    <text x="90" y="1120" font-size="80" font-weight="700" letter-spacing="-3">$ —</text>
+  </g>
+  <g fill="#15234b" font-family="Helvetica, Arial, sans-serif">
+    <text x="556" y="1063" font-size="42" font-weight="700" letter-spacing="-1">Property address</text>
+    <text x="558" y="1113" font-size="23" letter-spacing="3">CITY, STATE</text>
+  </g>
+
+  <path d="M60 1223H1020" stroke="#8b9dcd" />
+  <g fill="#1a3aab" font-family="Helvetica, Arial, sans-serif" font-size="22" font-weight="700" letter-spacing="2.4">
+    <text x="60" y="1285">AGENT NAME</text>
+    <text x="1020" y="1285" text-anchor="end">AGENT CONTACT</text>
+  </g>
+</svg>

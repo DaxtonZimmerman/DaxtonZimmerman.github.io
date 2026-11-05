@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1350" viewBox="0 0 1080 1350">
+  <defs>
+    <clipPath id="photo"><rect x="63" y="262" width="954" height="632" /></clipPath>
+  </defs>
+  <rect width="1080" height="1350" fill="#f8edd6" />
+  <g fill="#6d2730" font-family="Helvetica, Arial, sans-serif" font-size="22" letter-spacing="4">
+    <text x="63" y="70">AGENT NAME</text>
+    <text x="1017" y="70" text-anchor="end">SAMPLE DESIGN</text>
+  </g>
+  <text x="58" y="205" fill="#47232a" font-family="Georgia, serif" font-size="145" font-weight="700" letter-spacing="-7">Open House</text>
+  <rect x="55" y="254" width="970" height="648" fill="none" stroke="#935963" />
+  <image href="classic.jpg" x="63" y="229" width="1060" height="702" preserveAspectRatio="xMidYMid slice" clip-path="url(#photo)" />
+  <rect y="943" width="1080" height="407" fill="#6d2730" />
+  <g fill="#f8edd6" font-family="Helvetica, Arial, sans-serif">
+    <text x="63" y="1014" font-size="23" letter-spacing="4">DATE</text>
+    <text x="573" y="1014" font-size="23" letter-spacing="4">TIME</text>
+    <text x="63" y="1070" font-size="38" font-weight="700">Month / Day</text>
+    <text x="573" y="1070" font-size="38" font-weight="700">Start / End</text>
+    <path d="M63 1114H1017M540 987V1082" stroke="#d6a8a0" />
+    <text x="63" y="1196" font-size="49" font-weight="700">Property address</text>
+    <text x="65" y="1249" font-size="24" letter-spacing="3">CITY, STATE</text>
+    <text x="1017" y="1293" text-anchor="end" font-size="22" letter-spacing="3">AGENT CONTACT</text>
+  </g>
+</svg>

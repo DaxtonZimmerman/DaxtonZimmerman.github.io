@@ -157,4 +157,4 @@ The separate design page starts in `templates/agent-flyers.html`. Its shell is `
 
 In `dist/flyers.js`, `data-preview` buttons open the native HTML dialog. The browser handles Escape and keyboard focus inside the dialog. `data-choose` links select a sample in the contact form. `flyerInquiry()` combines the selected sample and optional project link with the visitor’s message. `sendInquiry()` from `contact.js` handles delivery to the existing Gmail receiver.
 
-To change a flyer, edit its SVG in `designs/flyers/` and run `node tools/export-flyers.mjs`. The script adds the real photo to the artwork and exports a full-size PNG and a smaller WebP for the gallery. The flyer titles, download links, and form options are in `templates/agent-flyers.html`.
+To change a flyer, edit its SVG in `designs/flyers/` and run `node tools/export-flyers.mjs`. The script adds the real photo to the artwork and exports a full-size PNG and a smaller WebP for the gallery. `content/flyers.json` feeds both the gallery cards and the inquiry options.

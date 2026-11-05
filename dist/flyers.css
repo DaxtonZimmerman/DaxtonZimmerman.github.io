@@ -170,20 +170,17 @@ h2 {
 }
 .sample-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 24px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 32px 24px;
 }
 .sample-image {
   display: grid;
   place-items: center;
   border: none;
-  padding: clamp(18px, 3.4vw, 45px);
+  padding: clamp(18px, 2.3vw, 32px);
   width: 100%;
-  background: #dfe7db;
+  background: #e8e3da;
   border-radius: 4px;
-}
-.sample:nth-child(2) .sample-image {
-  background: #eaded2;
 }
 .sample-image img {
   display: block;
@@ -197,11 +194,6 @@ h2 {
   transform: scale(1.015);
 }
 .sample-caption {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 8px 16px;
   padding-top: 12px;
 }
 h3 {
@@ -350,6 +342,11 @@ body:has(dialog[open]) {
 }
 .dialog-footer {
   font-size: 13px;
+}
+@media (max-width: 1000px) {
+  .sample-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
 }
 @media (max-width: 700px) {
   .wrap {

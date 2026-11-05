@@ -1,0 +1,25 @@
+<article class="sample">
+  <button
+    class="sample-image"
+    type="button"
+    data-preview
+    aria-label="Enlarge {{NAME}} flyer"
+    aria-haspopup="dialog"
+    disabled
+  >
+    <img src="assets/flyers/{{ID}}.webp" width="800" height="1000" alt="{{ALT}}" {{LOADING}} />
+  </button>
+  <div class="sample-caption">
+    <h3>{{NAME}}</h3>
+    <div class="sample-actions">
+      <a href="assets/flyers/{{ID}}.png" download aria-label="Download {{NAME}} PNG">PNG</a>
+      <a
+        class="choose"
+        href="#contact"
+        data-choose="{{NAME}}"
+        aria-label="Request this style: {{NAME}}"
+        >Request this style</a
+      >
+    </div>
+  </div>
+</article>

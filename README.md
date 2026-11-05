@@ -90,6 +90,6 @@ Original artwork and screenshots remain in `dist/assets/`. Self-hosted font file
 
 Preview at `http://127.0.0.1:8777/agent-flyers.html`. The public page is `https://daxtonzimmerman.github.io/agent-flyers.html`.
 
-The Open House and Just Listed flyers are original SVG layouts with real photography and placeholder property details. Edit the files in `designs/flyers/` and run `node tools/export-flyers.mjs` to refresh their PNG and WebP exports. The page footer credits the photographers. Daxton wrote the introduction.
+The flyer gallery uses original SVG layouts with real photography and placeholder property details. Edit the files in `designs/flyers/` and run `node tools/export-flyers.mjs` to refresh their PNG and WebP exports. `content/flyers.json` supplies the gallery titles, photo filenames, alt text, and inquiry choices. The page footer credits the photographers. Daxton wrote the introduction.
 
 `flyers.js` opens previews and sends the selected sample, message and optional photo/project link through the existing receiver in `contact.js`. The form does not upload files. It preserves the visitor’s text on failure and only reports success after receiver acceptance.
