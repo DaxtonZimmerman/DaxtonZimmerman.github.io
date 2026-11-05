@@ -192,10 +192,10 @@ const pages = [
   {
     file: 'services.html',
     template: 'services',
-    title: 'Website services — Daxton Zimmerman',
+    title: 'Website and design services — Daxton Zimmerman',
     active: 'services',
     description:
-      'Website projects, part-time roles, and internships. Get in touch with Daxton Zimmerman.',
+      'Business websites, Shopify stores, website updates, and real estate flyers by Daxton Zimmerman.',
   },
   {
     file: 'contact.html',
